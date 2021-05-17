@@ -1,0 +1,3294 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation">
+      
+      
+      
+        <meta name="author" content="Percona LLC">
+      
+      
+      <link rel="icon" href="../../_images/percona-favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+    
+    
+      
+        <title>MySQL and variants - Percona Monitoring and Management</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.3/css/line.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../css/percona.css">
+    
+      <link rel="stylesheet" href="../../css/lightgallery.min.cs">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="percona-light" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mysql-and-variants" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Percona Monitoring and Management" class="md-header__button md-logo" aria-label="Percona Monitoring and Management" data-md-component="logo">
+      
+  <img src="../../_images/percona-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Percona Monitoring and Management
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MySQL and variants
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="percona-light" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/percona/pmm-doc/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    percona/pmm-doc
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Percona Monitoring and Management" class="md-nav__button md-logo" aria-label="Percona Monitoring and Management" data-md-component="logo">
+      
+  <img src="../../_images/percona-logo.svg" alt="logo">
+
+    </a>
+    Percona Monitoring and Management
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/percona/pmm-doc/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    percona/pmm-doc
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../index.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Setting up
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Setting up" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../index.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Setting up
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../server/index.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Server
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Server" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../server/index.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Server
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/docker.html" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/virtual-appliance.html" class="md-nav__link">
+        Virtual Appliance
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/aws.html" class="md-nav__link">
+        AWS Marketplace
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/dbaas.html" class="md-nav__link">
+        DBaaS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="index.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Client
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Client" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="index.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Client
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="mysql.html" class="md-nav__link md-nav__link--active"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            MySQL and variants
+          </a>
+        </label>
+      
+      <a href="mysql.html" class="md-nav__link md-nav__link--active">
+        MySQL and variants
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-client-user" class="md-nav__link">
+    Create a database account for PMM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choose-and-configure-a-source" class="md-nav__link">
+    Choose and configure a source
+  </a>
+  
+    <nav class="md-nav" aria-label="Choose and configure a source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slow-query-log" class="md-nav__link">
+    Slow query log
+  </a>
+  
+    <nav class="md-nav" aria-label="Slow query log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slow-query-log-extended" class="md-nav__link">
+    Slow query log -- extended
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slow-query-log-rotation" class="md-nav__link">
+    Slow query log rotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-schema" class="md-nav__link">
+    Performance Schema
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-response-time" class="md-nav__link">
+    Query response time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tablestats" class="md-nav__link">
+    Tablestats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-statistics" class="md-nav__link">
+    User statistics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-service" class="md-nav__link">
+    Add a service
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-the-user-interface" class="md-nav__link">
+    With the user interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-the-command-line" class="md-nav__link">
+    On the command line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-the-service" class="md-nav__link">
+    Check the service
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mongodb.html" class="md-nav__link">
+        MongoDB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="postgresql.html" class="md-nav__link">
+        PostgreSQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proxysql.html" class="md-nav__link">
+        ProxySQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="aws.html" class="md-nav__link">
+        Amazon RDS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="azure.html" class="md-nav__link">
+        Microsoft Azure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="google.html" class="md-nav__link">
+        Google Cloud Platform
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="linux.html" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="external.html" class="md-nav__link">
+        External Services
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="haproxy.html" class="md-nav__link">
+        HAProxy
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../using/index.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Using
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Using" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../using/index.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Using
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/interface.html" class="md-nav__link">
+        User Interface
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/alerting.html" class="md-nav__link">
+        Integrated Alerting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/query-analytics.html" class="md-nav__link">
+        Query Analytics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../using/platform/index.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Percona Platform
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Percona Platform" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../using/platform/index.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Percona Platform
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/platform/security-threat-tool.html" class="md-nav__link">
+        Security Threat Tool
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/platform/dbaas.html" class="md-nav__link">
+        DBaaS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../how-to/index.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          How to
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="How to" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../how-to/index.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            How to
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/configure.html" class="md-nav__link">
+        Configure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/upgrade.html" class="md-nav__link">
+        Upgrade
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/secure.html" class="md-nav__link">
+        Secure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/optimize.html" class="md-nav__link">
+        Optimize
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/annotate.html" class="md-nav__link">
+        Annotate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/render-dashboard-images.html" class="md-nav__link">
+        Render dashboard images
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/troubleshoot.html" class="md-nav__link">
+        Troubleshoot
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../details/index.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Details
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Details" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../details/index.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Details
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/architecture.html" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/interface.html" class="md-nav__link">
+        UI components
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      <label class="md-nav__link" for="__nav_5_3">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../details/dashboards/index.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Dashboards
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Dashboards" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../details/dashboards/index.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Dashboards
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_1" type="checkbox" id="__nav_5_3_1" >
+      
+      <label class="md-nav__link" for="__nav_5_3_1">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../details/dashboards/dashboard-home.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Insight
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Insight" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../details/dashboards/dashboard-home.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Insight
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-advanced-data-exploration.html" class="md-nav__link">
+        Advanced Data Exploration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-victoriametrics.html" class="md-nav__link">
+        VictoriaMetrics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-victoriametrics-agents-overview.html" class="md-nav__link">
+        VictoriaMetrics Agents Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-inventory.html" class="md-nav__link">
+        PMM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_3" type="checkbox" id="__nav_5_3_3" >
+      
+      <label class="md-nav__link" for="__nav_5_3_3">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../details/dashboards/dashboard-cpu-utilization-details.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          OS Dashboards
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="OS Dashboards" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../details/dashboards/dashboard-cpu-utilization-details.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            OS Dashboards
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-disk-details.html" class="md-nav__link">
+        Disk Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-network-details.html" class="md-nav__link">
+        Network Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-memory-details.html" class="md-nav__link">
+        Memory Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-node-temperature-details.html" class="md-nav__link">
+        Node Temperature Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-nodes-compare.html" class="md-nav__link">
+        Nodes Compare
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-nodes-overview.html" class="md-nav__link">
+        Nodes Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-node-summary.html" class="md-nav__link">
+        Node Summary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-numa-details.html" class="md-nav__link">
+        NUMA Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-processes-details.html" class="md-nav__link">
+        Processes Details
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_4" type="checkbox" id="__nav_5_3_4" >
+      
+      <label class="md-nav__link" for="__nav_5_3_4">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../details/dashboards/dashboard-prometheus-exporter-status.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Prometheus Dashboards
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Prometheus Dashboards" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../details/dashboards/dashboard-prometheus-exporter-status.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Prometheus Dashboards
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-prometheus-exporters-overview.html" class="md-nav__link">
+        Prometheus Exporters Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_5" type="checkbox" id="__nav_5_3_5" >
+      
+      <label class="md-nav__link" for="__nav_5_3_5">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../details/dashboards/dashboard-mysql-amazon-aurora-details.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          MySQL Dashboards
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="MySQL Dashboards" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../details/dashboards/dashboard-mysql-amazon-aurora-details.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            MySQL Dashboards
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-command-handler-counters-compare.html" class="md-nav__link">
+        MySQL Command/Handler Counters Compare
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-innodb-compression-details.html" class="md-nav__link">
+        MySQL InnoDB Compression Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-innodb-details.html" class="md-nav__link">
+        MySQL InnoDB Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-myisam-aria-details.html" class="md-nav__link">
+        MySQL MyISAM/Aria Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-myrocks-details.html" class="md-nav__link">
+        MySQL MyRocks Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-instance-summary.html" class="md-nav__link">
+        MySQL Instance Summary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-instances-compare.html" class="md-nav__link">
+        MySQL Instances Compare
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-instances-overview.html" class="md-nav__link">
+        MySQL Instances Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-wait-event-analyses-details.html" class="md-nav__link">
+        MySQL Wait Event Analyses Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-performance-schema-details.html" class="md-nav__link">
+        MySQL Performance Schema Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-query-response-time-details.html" class="md-nav__link">
+        MySQL Query Response Time Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-replication-summary.html" class="md-nav__link">
+        MySQL Replication Summary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-group-replication-summary.html" class="md-nav__link">
+        MySQL Group Replication Summary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-table-details.html" class="md-nav__link">
+        MySQL Table Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-user-details.html" class="md-nav__link">
+        MySQL User Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mysql-tokudb-details.html" class="md-nav__link">
+        MySQL TokuDB Details
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_6" type="checkbox" id="__nav_5_3_6" >
+      
+      <label class="md-nav__link" for="__nav_5_3_6">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../details/dashboards/dashboard-mongodb-cluster-summary.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          MongoDB Dashboards
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="MongoDB Dashboards" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../details/dashboards/dashboard-mongodb-cluster-summary.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            MongoDB Dashboards
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mongodb-instance-summary.html" class="md-nav__link">
+        MongoDB Instance Summary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mongodb-instances-overview.html" class="md-nav__link">
+        MongoDB Instances Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mongodb-instances-compare.html" class="md-nav__link">
+        MongoDB Instances Compare
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mongodb-replset-summary.html" class="md-nav__link">
+        MongoDB ReplSet Summary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mongodb-inmemory-details.html" class="md-nav__link">
+        MongoDB InMemory Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mongodb-mmapv1-details.html" class="md-nav__link">
+        MongoDB MMAPv1 Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-mongodb-wiredtiger-details.html" class="md-nav__link">
+        MongoDB WiredTiger Details
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_7" type="checkbox" id="__nav_5_3_7" >
+      
+      <label class="md-nav__link" for="__nav_5_3_7">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../details/dashboards/dashboard-postgresql-instances-overview.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          PostgreSQL Dashboards
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="PostgreSQL Dashboards" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../details/dashboards/dashboard-postgresql-instances-overview.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            PostgreSQL Dashboards
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-postgresql-instance-summary.html" class="md-nav__link">
+        PostgreSQL Instance Summary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-postgresql-instances-compare.html" class="md-nav__link">
+        PostgreSQL Instances Compare
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-proxysql-instance-summary.html" class="md-nav__link">
+        ProxySQL Dashboards
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3_9" type="checkbox" id="__nav_5_3_9" >
+      
+      <label class="md-nav__link" for="__nav_5_3_9">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../details/dashboards/dashboard-pxc-galera-node-summary.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          HA Dashboards
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="HA Dashboards" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../details/dashboards/dashboard-pxc-galera-node-summary.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            HA Dashboards
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-pxc-galera-cluster-summary.html" class="md-nav__link">
+        PXC/Galera Cluster Summary
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-pxc-galera-nodes-compare.html" class="md-nav__link">
+        PXC/Galera Nodes Compare
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/dashboards/dashboard-haproxy-instance-summary.html" class="md-nav__link">
+        HAProxy Instance Summary
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      <label class="md-nav__link" for="__nav_5_4">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../details/commands/index.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Commands
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Commands" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../details/commands/index.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Commands
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/commands/pmm-admin.html" class="md-nav__link">
+        pmm-admin - PMM Administration Tool
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/commands/pmm-agent.html" class="md-nav__link">
+        pmm-agent - PMM Client agent
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/api.html" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/victoria-metrics.html" class="md-nav__link">
+        VictoriaMetrics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/glossary.html" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq.html" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../release-notes/index.html" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Release Notes
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../release-notes/index.html" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Release Notes
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.17.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.17.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.16.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.16.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.15.1.html" class="md-nav__link">
+        Percona Monitoring and Management 2.15.1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.15.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.15.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.14.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.14.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.13.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.13.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.12.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.12.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.11.1.html" class="md-nav__link">
+        Percona Monitoring and Management 2.11.1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.11.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.11.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.10.1.html" class="md-nav__link">
+        Percona Monitoring and Management 2.10.1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.10.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.10.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.9.1.html" class="md-nav__link">
+        Percona Monitoring and Management 2.9.1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.9.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.9.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.8.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.8.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.7.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.7.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.6.1.html" class="md-nav__link">
+        Percona Monitoring and Management 2.6.1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.6.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.6.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.5.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.5.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.4.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.4.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.3.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.3.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.2.2.html" class="md-nav__link">
+        Percona Monitoring and Management 2.2.2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.2.1.html" class="md-nav__link">
+        Percona Monitoring and Management 2.2.1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.2.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.2.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.1.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.1.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.0.1.html" class="md-nav__link">
+        Percona Monitoring and Management 2.0.1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/2.0.0.html" class="md-nav__link">
+        Percona Monitoring and Management 2.0.0
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-client-user" class="md-nav__link">
+    Create a database account for PMM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choose-and-configure-a-source" class="md-nav__link">
+    Choose and configure a source
+  </a>
+  
+    <nav class="md-nav" aria-label="Choose and configure a source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slow-query-log" class="md-nav__link">
+    Slow query log
+  </a>
+  
+    <nav class="md-nav" aria-label="Slow query log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slow-query-log-extended" class="md-nav__link">
+    Slow query log -- extended
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slow-query-log-rotation" class="md-nav__link">
+    Slow query log rotation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-schema" class="md-nav__link">
+    Performance Schema
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-response-time" class="md-nav__link">
+    Query response time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tablestats" class="md-nav__link">
+    Tablestats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-statistics" class="md-nav__link">
+    User statistics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-service" class="md-nav__link">
+    Add a service
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-the-user-interface" class="md-nav__link">
+    With the user interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-the-command-line" class="md-nav__link">
+    On the command line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-the-service" class="md-nav__link">
+    Check the service
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/percona/pmm-doc/edit/main/docs/setting-up/client/mysql.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="mysql-and-variants">MySQL and variants<a class="headerlink" href="#mysql-and-variants" title="Permanent link">&para;</a></h1>
+<p>PMM Client collects metrics from <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.percona.com/software/mysql-database/percona-server">Percona Server for MySQL</a>, <a href="https://www.percona.com/software/mysql-database/percona-xtradb-cluster">Percona XtraDB Cluster</a>, and <a href="https://mariadb.org/">MariaDB</a>. (Amazon RDS is also supported and explained in a <a href="aws.html">separate section</a>.)</p>
+<p>This page shows you how to set up PMM to monitor a MySQL or MySQL-based database instance. (You should read it completely before starting work.)</p>
+<p>Here is an overview of the steps involved.</p>
+<p><img src="data:image/png;base64,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co0///z666/R7fz9/StWrNihQ4fdu3dLVatXr27YsKGXl5dDv+q+bt26gIAADw8PUbJz5842bdqULVv2/vvv37x5s7QJysVPyTdo0GDevHm///67VEXU4GgnIUUBxYsQ/UPxUoPSA4yKo3NqixYtDh069Ouvv/7yyy+TJ09+9tlnlWv8+Wfr1q2XLFly9erVa9eupaamPv7446J8+/bt8Cd0RJTjFcuF/H8Mu3XrdvHiRfEWGlezZs1du3bl5OScO3cOFijKjx49in3D640bN2B+wcHB8+fPF1VEJY52ElIUULwI0T8ULzUoPcCoqJlToT6QJ2Xpn39WqlTp8uXLytI//wwKCoqLi5PewsM6duwolu2L19mzZ6XyDh06bNu2TXor0aNHj1OnTklvsQONGjWS1RPnUdNJiFZQvAjRPxQvNSg9wKg4Oqd+9913gwcP9vf3L5FHyZIllWv8+ee0adOqVq06ceJE9LwffvhBKvf19b169ar0FssoEcv2xevWrVtSebly5f71r39JbyXwiSXz8PT09PDwKGjfiBM42klIUUDxIkT/ULzUoPQAo+LonNq1a1d41ffff//777//9ttvtsIkOHv27OLFi4cOHQq1CgkJEYW24uXn5yeWFe3cuXNHLl7yKmySr3iVLVtWLnlEQxztJKQooHgRon8oXmrI3yeMh6NzaoUKFa5fvy6WU1JSChIviW+//dbHx0csBwUF7dixQ6qKi4uTvmqsUqXKlStXpKr09PSCxAvmFxMTIy8RoKlVq1YpS4kWONpJSFFA8SJE/1C81HAXnzAMjs6prVq1CgkJuXHjhsViadq0ab7iBTfas2dPdnY2FG3lypVt27YV5du3b69bt25ycjLK8Ypl6eH6kSNHjho16ocffvj3v/996NChZs2aFSRe2LB27dpo/9q1a5mZmUOHDhXlSUlJfn5+oaGhP/30048//piQkNCtWzf5hsRpHO0kpCigeBGifyheasjHJwyJo3Pq6dOnW7duXbp0aWjTihUr8hUvOFCPHj28vb2rVq06ePDgb7/9VqpatWpVw4YNS5Uqpfg5CdjSmDFj/P39fXx8AgMDIWQFiReIjY0VPxsB89uyZYtUfvjwYchWhQoVfH19e/bsiR4v24g4j6OdhBQFFC9C9A/FSw3Kyd6ocE4ld4WdRA9QvAjRPxQvNVC8CPkLdhI9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eAGAhCB4AYC0IXgBgIQgeAGAtCF4AYCEIHgBgLQheAGAhCB4ideNK1U0oqCgoFgvFyOUFLwubk0ybUKpc7nx81X2lAQADQHBS7x+qP07HgUFBaXxC95BBHAQBC/xuvb1vy9uVX53LIfOgCgoKJYKHSPl25JwpDRU+e7oWTrzXPvme/aUBAANAcFLvLh3vH7E350A0Ihw5gFwKAQv8cLpDwAaH848AA6F4CVeOP0BQOPDmQfAoRC8xAunPwBofDjzADgUgpd44fQHAI0PZ576oOGPrRJUmm0FV4PgJV44/QFA46vDmefnn39evHhxz549mzdvTrdLliyprKxkF3INZqMVghcIIXiJVx1OfwAA9WTvmefatWtDhgx56aWXaPC4fv063b788svDhg375Zdf2EVdgNloZbYSXBaCl3jZe/oDAKg/e88877333uTJk5lKqlm7di03TSNCenp6QEBAhw4dOnfu/OKLL/700093L/4/hw8fHjFiRKtWrQYMGJCQkMDX79mzx8/Pr3nz5nS7b98+vp7W/NFHHz300EMeHh6DBg3S6XQKhaJfv340O3bs2C+//NKuxS5evPjss896eXnRfk6bNq2iooK/u5X9j4qK6tOnD+0brTAxMdFsxuIrhRNW1knPw9ChQ1u2bElrpqfx5s2bfBPIAIKXeNl7+gMAqD97zzwUaM6ePctUZmdnU8ThpmlEGDhwII0uV69eNRqNs2bNmjlz5t2L1zh69GjXrl2PHDlSWVlZWlpKGYirP3TokK+vL929qqqKbmmaIgvXRGum5PTZZ5/RmpcuXdqxY8dHH32Unw0ODrZrscGDB585c+aXX375+eefQ0NDX3nlFf7ulvb/+PHj9913X1ZWFjVlZmb27NnT9uBlaZ05OTm0J3R77dq1zz//fOLEievXr+eaQB4QvMTL3tMfAED92XvmadWq1X/+8x+mkmo8PDy4aRoRioqK+KYffvihU6dO/CwvICDg4MGDbO3t22PGjElNTeVnKYc9/PDD3DStmfITN3358mVmlgKWXYsJUfijhMdNW9l/CnB8CiS0n7YHL0vrfPzxx/Pz8/mmS5cu9e3bl58FGUDwEi97T38AAPVn75nHluB169YtYavZdELLm66HeHp6UjziZ2maarhpWs/vv//ON5nOWqo3u9hXX30VEhLi4+PjVqtp06b8Apb238vL68qVK3w9l+r4WZ5wT/gJS+v09vZuWqtJkybu7u7CPQF5QPASL3tPfwAA9WfvmceWjxrvbjRTc7s2xNgYvGhJbppZj6VZS/XMbGBgYFhY2Lfffnvz5s1ff/3V0t2FNbRvdQ5efzTfXUNB9rvvvru7EWQFwUu87D39AQDUn71nHlsurr+70UzN7drck5KSwtbWftSYlpbGz6ampgo/auTrrcxaqmdm27Rpc/XqVW5aq9Vauruwpj4fNf7RfHcNPbrdu3ff3QiyguAlXvae/gAA6s/eM89///vfwYMHv/zyy59//vmNGzfodt68ecKvk7ASMoQyMzO7d+9+7NixqqqqsrKy6dOnc/WHDh3q2bMntfIXsAsvrv/j/pZnLdUzs7TP4eHh165dKygoeOCBByzdXVij0WjqfHH9H81315w6dcrLyysmJuann3768ccfaRNBQUF3LwvShuAlXvae/gAA6q8OZ54rV64sWrTI19e3WbNmPXr0WLx4sfALVK2EDIZarea+RoFyT2JiIl+/e/duPz8/Wrnp10nw01ZmLdUzs0VFRcOHD2/RogXlp+3bt1u6O1MTGRlJ2at58+Z9+/a16+sk/mg2qaEkR2GrTZs2np6eEyZMoIFZsCBIHoKXeNXh9GcL0wOeY6neWRy6P6mpqTRIOHQTABLloDMPAHAQvMTLrtMf/SH4ySef8LMHDx6kV0F4wcQ///lP7n+SLf3JJbYUYsv+2LKMWX369Dl37hxbCwB2nnkAwF4IXuJl1+nvjTfe+PDDD/nZN998s2fPnqGhoXzNjh07hLO3TVJLnUOME9V5n5s0aSL8f3IA4Nl15gEAeyF4iZddp7+jR49OmDCBnx0yZMju3bsfeughvmbatGnHjh27fSesuN2Nq7HyExY8bmGzNZ9//jn1JB8fn7Zt29J6aJf4ZSz9Agbdd//+/b6+vu7u7vzCfBM/YXbHhPvPL2zLhph7WfqdEG5tZn/AxNJWAGTArjMPANgLwUu87Dr9Xbt2jXID3d6uvdCVYsT169ephosRt27d6tatG9fKZxR+gp+19BMWzGKWaoYPH75ly5bLly9XVVVlZ2c/8cQTXL2VX8Cg+wYFBX399dfcrJBwPy3tGLMztm9IeEdLvxNi6QdMrGwF6uDGlSrq6ijiKRcjlHTmubg1ybQJxUHlxs//+xoLcAUIXuL1gz3B63btD01oNBqaSE9PnzJlCk1MmjSJu8yrsLCQ8gG3mJXgZeknLISsBK927dpdunTp7sYaVn4Bg+5bUlLCNwkJ99PSjjE7Y/uGTB8FR/g7IZZ+wMTKVqAOjEfOUj9HQXHl8t2xHPbAAPlC8BIve4PXli1bFixYQBNvvfVWeHg4TWzevJm7ruuDDz7gam5bDV6WfsLCeiVfExYW5u3t/dprr1FnEn7zspVfwKDp69ev80sKCffT0o4xO2P7hoR3tPQ7IZZ+wMTKVqAOjEdzqJ+Xb0uiro4ihkIhgF4OujVtQmnwcnFrzfuLCF4uBcFLvOwNXv/85z/79+9PE3/+85+5t4jy8vK4y7yeeuqpTz/9lFvMUmphZs3WmFZSJBLWlJSUUNqbPn26p6cnH/Ws/AKG2U1wLO2nsIZpsn1DwllLvxNi6QdMrGwF6sDefg4gJ+j/LgjBS7zqcED26tWrrKzMx8eHe4vot99+69ix47///W/hVfZ8sGjWrBktYFpvpYZ06tTphx9+4GcLCwvNLvbll1926NCBm7byCxhm78uxlK6ENcxDsH1DwllLvxNi6QdMrGwF6qAO/RxANtD/XRCCl3jV4YB89dVXp02b9swzz/A1kyZNWrJkyWuvvcbX8MGiT58+x48f5z/Fs5JvhGbOnDlr1qzvvvvuv//975kzZwYOHChMKseOHauoqKAc89FHH40cOZKrt/ILGGY3wbEleDEPwfYNCWct/U6IpR8wsbIVqIM69HMA2UD/d0EIXuJVhwOS+4nWiIgIvuaDDz7w8PCger6GDxZqtbp3795NmzblaqzkGyFKG7Nnz/bx8enQoYO/v396ejq/GCWSxx9/vH379t7e3iEhIV9++SV/L0u/gGF2Exy+yXQZSw/hts0bEs5a+p2Q25Z/wMTSVqAO6tDPAWQD/d8FIXiJFw5IcAUN2M9NM7rUye8RAaMB+z9IBYKXeOGABFdgbz+vrq7esGHDwIEDW7du7evrO3369Jyc//1HmPxiivweETDs7f8gAwhe4oUDElyBvf189uzZf/nLXz799NNff/3VYDDEx8ePHj2aa5JfTJHfIwKGvf0fZADBS7xwQIIrsLefe3h4XLlyha2tJYwpe/bs8fPza968Od3u27ePq/zmm2+6dOnCL/PCCy9wE7///ruPj4/Zr/+Niorq06cPradfv36JiYn8JkwjkbDG0o9KuQl+uqpbt27V1dX8Xa5evert7c18g8k9HxFn79699913n+lOgvjZ2/9BBhC8xAsHJLgCe/t57969z507x9bW4gPHoUOHKNzQ6ayqqopuaTo9PZ1ruv/++0tLS2niiy++oOWNRuPt2m+8Gzhw4J3V/OH48eMUaLKysigVZWZm9uzZ05bgZeVHpdwEP10VHBwcGRnJ350S3rx58/hZji2P6OjRo/xO0m2vXr1M9w1Ey97+3yBSU1OpC7lyP3HuY0fwEi+nHJAAjczefk5jhre393PPPbdt2zadTmf2u+jGjBkj/E9eSi0PP/wwN71w4ULuq33ptkmTJlz0ee+99xYtWsQvz3v00Uf5fHP7zn8Nc9OmJ26+xsqPSrkJfrqKQhKlwN9//52bHTdunF6v56Z5tjyisWPHHjlyhG8S/qMxiJ+9/d/tjpYtW/br12/58uW//PILu9C99OnTx9JfL1Jk5bpPS5x7jCB4iZe9BySAFNWhn//00090wgoNDR0+fHjv3r1zc3O5ev5k6unpefnyZX55mqYabvrYsWOTJ0++XRt05s2bFxISQtP+/v4ff/wxvzzPy8tL+LEmrYffhOmJm6+x8qNSbnf/dNXIkSMPHz58u/YLhynk8fU8Wx4RTVjaSRA/e/s//+JS2igqKgoMDJw/f/7di9wb9Uw+8cuAles+LXHuMYLgJV72HpAAUlTPfp6YmPjggw9y01ZiCkUobvratWsUjL7//vs2bdrQrY+PD93SH8pm3zawkmmYE7fwt7Os/KgUc6+kpKRHHnmEJlauXKlSqYRNHFseEbOTNO3cQQXsYm//Z17cS5cuCS9btOXiQjcBrtXS5YPCe3GzH3300UMPPeTh4TFo0CCdTqdQKPr160ezY8eO5b+48eLFi88++yz1zw4dOkybNq2iooJfW3p6ekBAANV37tz5xRdfpL+g+G3Rno8YMYKOnQEDBiQkJAjrzT4iISvXfd62sOZ77ozZjdbzGeAheImXvQckgBTVs58L3/vhB5IxY8akpaXxy6SmpvIfzJHx48e/+uqrEyZMuF37sSBN0y3fKmTlo0Yrv51l5Uel+GU4dELv1avXuXPn6C5mRxRbHhHzUSNNM1sBMbO3/zMvrjB42XhxITfLTdy2evmg6b2os3322WdXr15dunRpx44d6QDhZ4ODg7nFaB/OnDlDf8n8/PPPoaGhr7zyCn/3gQMH0iZoeaPROGvWrJkzZ3JNR48e7dq1K3XdysrK0tJSSi1cvZVHJGTluk9La7ayM1Y2Ws9ngIfgJV72HpAAUmRvPx89enRcXNwXX3xRXV1NZys6Xc6ZM4dr4ocTGkt69uyZmZnJXxQvzE+bNm1q0qQJd6XXli1baHrz5s18q5BGo7F0cb2V386y8qNSppGIdsPPz2/NmjVMPceWR0SDCg082dnZtCd0S9OmWwHRsrf/8y/u9evXi4uL6a+Iv//971yNjRcXcrP8tJXLB03vRSGDm+be/RXOUgrhl+RR3KEkx03T8kVFRXwT/d1Cf71w0wEBAQcPHuSbeFYekZCV6z4trdnKzljZaD2fAR6Cl3jZe0ACSJG9/Zz+tJ0xY0b37t09PDz69ev3zjvv0B+mXJNwONm9ezcFmmbNmpl++QINV/wZ89NPP6VpqhEuIBQZGcl9UwOdfIXf1GDlt7NuW/5RKeEynKqqqrZt237//fdMPcfGR7Rnz55evXpxOxkVFdWiRQthK4iZvf3f7Q56laknhIWF8f3f9osLhf3K9FNs4VvIzL2EV4aZznITX331VUhICB0a3H4K94H/XV2+hpugY5n5IhWOlUfEsHTdp6U1W9kZKxs1fch2PQM8BC/xsveABJAiafVz/tzaUI4cOUIBjq2tB/qL//7772drQazs7f9WeqDtFxcKZ02DF3/5oJV7WZkNDAykOPjtt9/evHnz119/5etN95yvoS2ajUdWHpEVwus+La3Zys5Y2ailh8zMWnoGeAhe4mXvAQkgRdLq56bn0PowGo0PPfSQ2S9utcuLL75YVlZ27do1+kN/8ODBlj45BRGyt/9b6YG2X1wonLVy+aCVe1mZbdOmzdWrV7lprVbL15vuuTCppKSk3N1Yw8ojskL4pp2lNVvZGSsbtfSQmVlLzwAPwUu87D0gAaRIWv3c9BxaZ7QqOkEfPXqUbbBfTEwMBbjWrVvff//94eHhzGcoIGb29n8rPdD2iwuFs1YuH7RyLyuzw4YNo05IfwYUFBQ88MADfL3pnvM1tN3u3bsfO3asqqqK/oSYPn06V2/lEQlZue7T0pqt7IyVjVp6yMyspWeAJ9Lgdev6jatffEs90pXLxQglHZAXtyaZNrlOoW5wq/qPiwwkBz35ngX9/J5F6kcBWPFDwwWv2zZfXMjMWrp80Pq9LM0WFRUNHz68RYsWlOG2b9/O15vuubBGrVZz3+BASSUxMZGvt/SIhKxc93nbwpqt74yljVp6yMyspWeAJ67gVVX+zSer9x8b8Bx1RBQUvhz1CykJ23W54H//PyJ+6MkoDV4kdxSALewNXiADYgleN65UFczfrGrqT+XjR+dnvRuj3aE5m1LoyiVbkXN6TRLdmja5TqFukLU85vjji5JbPEynp+zJiys/M7C9R0zQk+0t6Of3LJI7CsB2CF4uSBTBi/6GS/vTU6pmARmvhl8o/qngu9soKEzJ+9fVM6vi1R0fo37y6fuxbB8SB/RkFIcWSRwFYBcELxfk/OBF3S6lXeChXtPOnSo3PdGgoAhL3qeVR595h85TmuAFF//5qdForKysrK6uZnuVM6AnozROEfNRAPZC8HJBTg5eV//vUkr7oLSBs/D2AIrtJeMfkcom/ocn/l2v1xsMhoqKCqePOujJKI1cRHgUQB0geLkgZwavW9dvZIyYk+w5IbfwB9PTCgqKlXKCRh23UYfnLc/Ly6Mu69xRBz0ZxSlFVEcB1A2ClwtyZvC6uCOZOpw2Ntv0hIKCcs9yZMpSZVP/o3sVOp3OuaMOejKKs4p4jgKoGwQvF+S04HXr+o003ymHH37d9FSCgmJLyfvnz6p245KG/SU9Pd2Jow56MooTi0iOAqgzBC8X5LTg9VXiiZr/i07OMz2VoKDYWE68G0O9KGn9Vo1Gk5eXZzAYKisr2a7mYOjJKM4tzjoKblypqir/hvmuVxR7C75AuEEKdcXrl6vYPipWTgte2S+sPujzZIHxd9PzCAqKjSXvX1eVzQISJv9dqVRmZGTo9Xqj0djIf+6jJ6M4tzTyUfDdsXPnX15/qNtkpclXvKKgOLcc6vLUudmrv046cev6DbbjionTgpe6y1PHpq8yPYmgoNhVDj38alKXCQqFQq1Wa7Va6r6N8+c+Dz0ZxemlcY6C709e0Az/Kw1vye0fOzp1+ak1ysxdx02/7hXFroIvEG6QQl3x1Frlsedq/gymLprmO6V8R/KtGzfZTiwOzgle1y9X0VNDT5PpGQQFxa7y8Vt7lO6jo/fuT0xM1Gg09Od+RUUF2+EcBj0ZRQzF0UfB77duFS/dRV1dfV9I5g5NwaVbpvuAgiKSclZ14fDDr1N3zRg55+oX37K9WQScE7wqPzPQk5K554TpU4aCYlc5vTWd+lLspm1xcXGpqak6nc5oNLIdzmHQk1HEUBx6FFDqyp62lNZ//KXN+V/fNN06CooIizY2O9nz8eS24wrjDovtS4adE7x+zNYra65Hzjd9slBQ7CrZqgvUlxTLNvKfsxgMBrbDOQx6MooYikOPAv0/duJtXRQpltzCHw7d/3xym0dzEw+L6kuGnRO8fqj9B9qzKYWmzxQKil2FelHNkBO2wfYe/P/bOxfwKKrz/4f71UAQRLnfBVTuclMRUdBSqojWKkXF2kpVxKqloAW1KigoV5WLQhLCLYmEQIBAgAAJEEIIBC+tgtV4i/8qthYtLepP/b9k6uk4s7PZnd3Zndn9fJ7vk2f2nDPnnD3znjnfvZ2EESIZuUHOzYK/7Thj6bbe8ay5UYTcr+KyE+taX5uRNKw4f497NlvBeCFvy7klJxCIZOQGOTULvvtua5/bs9qN4RNG5F3t33k8vcbA9aPudc9Gdxgv5G05teQEBpGM3CCHZkHFlv1S7e4XtppbRMhD2nLHM+nVB2xYnOIS74XxQt6WQ0tOgBDJyA1yaBbsv3PmK42uLP3g/8wtIuQhHXz172K81t4wKcKbDFuB8ULelkNLToAQycgNcmgWrG/x0y3X/tHcHEKe07p+49e2uDoymwxXCcYLeVsOLTkBQiQjN8iJWfD155V71D3BjxlRLCj3gRfTqw1IW57i6CbDAYLxQt6WE0tO4BDJyA1yYhawRx2KJeXP2yDxnDprvkObDAcFxgt5W04sOYFDJCM3yIlZwB51KJZUmP7fve6c2GQ4WDBeyNtyYskJHCIZuUFOzAJiG8WStDmyYsoMJzYZDhaMF/K2nFhyAidmIlnmrDnRpwIvGYqsWrFKj4wSdJhzoygnZkHMxDZCpc7MEdtgvJySukHXrl2nTfvOd/5u2v53/62yLuo70HzKhX0GqBt6IGX8KKf43aL3TpvTY0/RnU4xE8mBBFWwJUORVStW6RGWS7qh5MQsiJnYRqjUmTliG4yXU1K3ZjFAq7cf6Tt46M/H36Oy2nXq+lLWHn35pet2S6LeeFVZxo9mvfTK4GE/KSr/jzkrxhTd6RQzkRxIUEVSVv2xSo+wXNINJSdmQczENkKlzswR22C8nJLh1px7+MMmzZqrrBmL1ogx0hcYfMU1Mxev1RuvKsso7XvnlHgyve566MxVGDT06pj3XtGdTqFHslymac+93LhJ04aJjX454cGSj75V6cOvvSmxUdJdDz0m11EOHpuX4ifdj2a/vK5j1wtr16nb75Ircg6Wa4nS0Ni7HpBGpWnpgD7wrOpP+AF95fJwTsoGeT1Qp269Hn0Hrd93zNwBg4Lqj1W6laz6f/6FvV/OLtTKZOx6vXW7TtrxxgPvDPvpDU2anlO/QcOeF1+yYOUWLf1Mu7/5nbSbdHazR+cuNz9rQ7vRlROzIPTYRsg9cmKO2Abj5ZQMt2aD8ZLbeocu3dfmv6qlrNl5tMP5F0iiOiuQMkqZu99IsGDAkOEH3v/KUD6WFN3pFHokyzXqM3DI5kPvS4TIwSOzl6r0hau3vpi+XQ7EDWhvdvpJ9yMxFuKHxJ3f+/BM8SJa4tSnF0lz0uimkvd69b80QRd4/utXJdXDgZePyC56u/D4F+N++5Cq34+C6o9VupWs+v+HGS+MuXWCVub+6c/edMe92nH3nv2mzHxxz1v/FC3OzO9/2VVautbultIP5NKY262yGxGWE7Mg9NhGyD1yYo7YBuPllNStWXyPeKaLLx12w22/1WfNXJJ+9ehbtJQR19389JIM/VmBlFHyY7xuvnOSoXCMKbrTKfRIlmuUurlYO07ZdEB8gEovKv+PSB3UqVvPT3og2vvXf9WtV187Pv/C3qrd5Jz9CbrA81+/KqkeSvhpx7v+8vfERkn6XP8KpD9W6Vay6v/utz4/59yW2ouQ/pdeOXdFjla+foOGOcXvmuvpelEfP+1W2Y0Iy4lZEHpsI+QeOTFHbIPxckoJP1CrVu1W7TqOnzhVXuKrrNLKzzK6dO8pN32RHByq+E5lBVhGqfj9r3MOluslL+Kl2E13TDSUjD1FdzqFHslymQrf/lI7loOzEhurdJ8HVulW2nzo/StH3Zh0djMtGlXhBmcl/q/d41+YazMfWD08+ME3VrlmBdsfq3QrmbutDkbeMG5OygaZhvUbnqXqvPXu30sTw356wz1TZ7ywNk+bYqVVtVtlNyIsJ2ZB6LGNkHvkxByxDcbLKfm5NausZ5Zm/nz8PTfefvesl14xZAVSxo+ksPouf2wrutMp9EhO+LHxkvVepfs8sErXDhRaiujiS4eJt8g7+v/EUux/998q60fG4u0vfdZmOLDx0Kxg+2OVbiVzt9XBS1l7xPPNW7Gp7+Ch+lPW7DwqL1Suu+XOxMZNrv/lb7RE/+1W2Y0Iy4lZEHpsI+QeOTFHbIPxckp+bs0qS9aeC3r3F6nX2ebVwk8ZP9r+2ieqfGwrutMp9EiWq5my6YB2nLq5+PwLe6t0nwdW6VaqV7+BMhDLNuxVha0+SvNzYOOhWcH2xyrdSuZu60/p3K3HyBtvnfjI0+YTRTkHy+s3aKgd/+gjzk1Fhnbr1K1X5KafrTgxC0KPbZeoypixUTIUWbVilR4ZJegw58aAnJgjtsF4OSU/4RtIViBlUGm0p1PokZxQ+eX6LaUf5B7+sO/goVNmvqjSfR5YpVupW4++v39ywf53/71mR1n3Xherwn+Y8YI0J40avjzu58DGQ7OC7Y9VupXM3dafct8fn6lWrZo0rVJ6D7hsTsqGHa9/WnDs5KRps6QJLV21K5emz6DLDe1e1Hfgw88sLvnw//SJUZQTsyD02HaJqowZGyVDkVUrVukRlku6EXY5MUdsg/FySn7CN5CsQMqg0mhPp9AjWa7mI7OXNko6u8FZiTffOUmt5eZI0A6s0q2Unv/ahX0G1K5Tt02HLnNX5KjC0pA0p23ToN8uweogwRf6YoazrBRsf6zSraQKmA9EeUf/X9Pm5+nfDF6UubP/ZVfVb3hWk6bnjLj2F+K0tHStXbkoPttN23qofedu4uGq7E9k5MQsCD22XSKXXCMlq/5YpUdYLulG2OXEHLENxgt5W9GdTqFHcqze5twpsVk//flt5vQq5fLL5MQsCEtss0ddqXV/rNKtZNX/2N6jLlxyYo7YBuOFvK3oTqfQIzlWb3MuVFH5f2T5UT9SCUouv0xOzIKwxDZ71JVa98cq3UpW/Y/tPerCJSfmiG0wXsjbiu50Cj2SY/U250JVq1ZtwJDh+s0vApfLL5MTsyAssc0edaXW/bFKt5JV/2N7j7pwyYk5YhuMF/K2ojudiGTkBjkxC0KP7QT2qKtMt+qPVbqVzN1WBzG8R1245MQcsQ3GC3lb0Z1ORDJyg5yYBaHHdgJ71FWmW/XHKt1K5m6rgxjeoy5ccmKO2AbjFSH5iWY/WahKRXc6xWEkx5ISdJhzA1e46rEtJ2ZB6LGdwB51lcdW/bFKt5K52/pTYnWPunDJiTlim5gyXgk/ULt2nTbtO9/5u2nyskNlXdR3oPmUC/sM0AdxlWXMevDxudLcQ0/MN2fp5acGn1k+EwNUKOc6IXUVnFB0p5NDkYwirHBNmXDVE6ycmAWhx3YCe9RVplv1xyrdSuZu60+J1T3qwiUn5ohtYs14aQdF751evf2IxJb6tzmS1a5T15ey9ujLa78K0QdxlWXM6tK95/Q5y7pc0MucpZefGnxm+UwMUKGc64RmvfSK2FNzelgU3enkUCSjCCtcUyZc9QQrJ2ZB6LGdwB51fvtjlW4lVcB8UBq7e9SFS07MEdvEpvHSJHHWpFlzlTVj0ZrBw36iLzD4imtmLl6rD+IqyxgkLy96XnxJaaX9WrPzqD7r0XnJLdt2qFmrVpv2naVafQ1+spT0vZI53KPvIJmfMn9G3jAu/8+faVnZRW8PvWZ00tnN6jdoKAXmp23WyuuRlPX7jg376Q0yyaSGK35y/c43TlRZs2hu6kZ5ASc3kbYdz3/qxdX6dHGZtWvXkadw9x+eDOQ3YmK8pK37pz9rzgpd0Z1ODkWyH1ntwaMOzA9l5Js1byG32Z/+/Db1UYhWRrKat2gtWfNWbNISrfYEspLVXkHF73994+13Sz9F8vpHxYmffvrsj+i55OwzoVi7jrwEkqes0q2el09Z9VOToVelFv0/t2UbqUdfbEPRX89r1TbYekor/xXYuN8+JIufXMfJTy00nxiUnJgFocd2iE8KBaVY3aMuXHJijtgmjoyXrFgdunRfm/+qliI+qcP5F0iiOiuQMgbJ6wZxTnIgt05ZDlX682u2tWjd7qWsPbIeLF23W+7XqgY/WXrpeyVdWpyZL+W3llVcc/3Yq0ffomV1vajPA4/N2fXmPwqPfyGLpdo2xlBh5249lryya/+7/97z1j9vumPi6LG/rrJm8XDy4kkWv4JjJ+VlnKxYWvryjfukNvm7751TYvsGXj7inqkz9G2JMne/kWDBpGmzDIVDV3Snk0OR7EdWe/CoA8PDZ5Zm9r/0ypyD5RIn1978K32UShl5gS7Xa8frnw4YMlxLtNoTyEpWewX97tHneg+4TOunGJ0H/zRPS7fqp3Zs7o+8NpA58sLaPInSdYVvXnfLnVq61fPShdv/KLXup7kbmnz2X16cyMswfTGZ/vrVLsB6RNOee7lHv8HS/9wjH/UdPNR8YlByYhaEHtshPikUuIpid4+6cMmJOWKb2DReB97/SjzTxZcOu+G23+qzZi5JV95ixHU3P70kQ39WIGX0kteyYsu03VPk7i+v1CVFy5KlUW2mUlr5kl3V4CdLL32vVm8/otK3v/ZJo6SzteP6Dc9S7x77PNcsMVLnnNdKFbOquUffQT7nsCxXaVsPqYfSuvkdET/GSxa/sH9tM7rTyaFI9iOrL+SqA8NDuZRikbVjucRiYvRlVuUZe261J5CV6lvsFSQGXd/PLt17asdW/dSOzf2R/s9J2WBI1NKtnpdPWfVTk6FXpRb9F7c09q4HSisd2LW/uEMOxPBNn7Ms2HpKK41g8qYi7Thl0wHziUHJiVkQemyH+KRQ4IrhPerCJSfmiG1izXhp1KpVu1W7juMnTt33zimVVVr5MY3c+OT+K5ID7eNwFXaBlNHr2eXrfzXpEfVQ7JpaIRIbN5EFTGWJLVM1+MnSS98r9a82DFnyBBs3aTrm1gl/WrBiW9nH5gKaNpW8N2zkGLW7TPUaNaqsuU7derv+8nd9liZpTk4/o+rVtS8BqNqU5Nk9Pj9Vr5vuuFdKimOQJ2uuM0RFdzo5FMl+ZLUHj+Giq4dnJTbWXzL5qy+jGSyDfO4JZCWrvYL050o/zVsJmB/67M+ZUPQVNn6el09Z9VOToVelFv1fv++Y9tWCFq3byR1GDnr0G6z8X+D1iBomNvLzk/5g5cQsiHxsI+ScnJgjtok142VONGQ9szTz5+PvufH2u9U7Oualy08ZvYaMuDbhxwy9ZrSWldgoycpd+cnSSyWac/Upa/NfnTRt9pWjbpRq1RfYDaf0HTxULFrukY/k9ZC267HPYvoUcYc+jVftOnX1Di9AyTB2uaCXzwpDV3SnU1giWcWP4Yr4TLfag0dfRi60eiiX0updRkNzSlZ7AvnsT6nFXkE/Mhy+9nAq/XE/DVlKVsbL6nnpO6nQsnz2U51lqMeq/+K3cg6Wt+/crUWb9ltKP9Dsl416zhiv41+odPOJQcmJWRCW2EbIJXJijtgm7oyXvNK9oHd/kXrJq7ICKaO04/VP9bfO0spP8SRF++q6n88T/WTpZe6VOUuvnOJ3pXXtuEbNmvofA+t3l3lpfUEgNcuKO/vldYZckbzcf/iZxeZ0/5IFT/+1/fAqutPJoUj2I6s9eM5KbKysbXr+ayq9R7/Bhh/qKpkDQMn/nkBW0u8V1KnbRfp+SoXasVU/Sy36Y/lRo/XzqlL6fmoy711k1f/h1950+71T5IXZ6LG/ltczI6672V493Xv2W75xn0r3+dwDlxOzIPKxjdyg+Wmb5UVFKL9qtH2io3Jijtgm7oyXWSorkDJKDz4+d+QN4wyJ11w/VtvQa+GqXKtv0PvJ0stPr1SK2KMFK7eI1ZOqpj69SP0rtJZtOzy/Zpv6GFGWauntvndOrdxWKq/UA6lZOnbOuS2lcnGWGbtev3LUjVr6osydiY2bPD4/VYyUWE95Lv0uucJQSYQV3enkUCT7kdUePIOGXj3utw/J9dpQ9NeBl49Q6c8uXy8XPS23RLIk6iRLVWUOACXznkBWstor6P7pz0r3pJMiKaN+02rVz1KL/ui/XL9+3zH1rU0/z8unrPqpybx3kVX/p8x8MbFR0qyXXpm5eK0cyLyzV88js5dKYXm9lHvko/6XXunzuQcuJ2ZB5GMbuUGt23V6MX274VsoQSnEYHZITswR22C8/FkccxmlLt17igsxJC7K2KE29Jo+Z5kYrJq1akkcG/aM8JOl5KdXKkXbpkXbjmXYyDHqu8Ozl2XJS5bqNWpoJVdvP9L1oj61atWWBUz/w3U/NWuVaNtGyPKm/XJTkyxyYrbq1W8gq86AIcMXZ+YbKomwojudHIpkP7Lagydr71s9+g767x5CqRv1l/KRWUtatetYp249KaDfRsEcAErmPYGsZLVX0IH3vxpz6wTpp0gO1Je3/PTTqj/isSSAz+yK3KGLfmcTq+flU1b91GTeu8iq/5m735BiYuC2v/aJHKh/ohxsPWe2BbnrgQaV20mIe6tRs6a+nmDlxCyIfGwjN0gWjkAmvh9ZTeToyok5YpuYMl4oDhXd6RT1SHboHmd7TyBkQ7lHPpJXYub0wOXELIh8bLNHnUq3el4+JZVPe+5leSUm/fnlhAf1b1ZZ1eOzPwkmtHSrcSi16L+cOCdlg6RoL4rW7zvmvz9Sfvi1N8llv+uhxwYNvVoOHpuXomXNfnldx64Xyus0ebWfc7Bc1WNDTswR22C8kLcV3ekU9UhWN8cwKpQ9gVDg+smYX2btfWv3W5+PHvtr/f5qNuTELIh8bLNHnZZu9bzOWCETWrqMm3Qm9/CHcvDI7KX+67Hqj8rSPyy1Hger/ksNAy8fkV30duHxL8b99iG1waRVf6T8wtVbX0zfLgfi6rT/FqNlieET37bvnVP3PjxT1WNPTswR22C8kLcV3ekU9Ug23yVDVyh7AqHA9cTCtJZtOzRu0vRnvxiv/5mODTkxCyIf2+xRp9KtnpdPSeWqPymbDqgv+/qpx2d/VJYhxWocrPovNaiP4Hf95e+JjZJUeZ/9kfLyYk/7xb12UKduPUOde//6r7r16hsSg5ITc8Q2GC/kbUV3OhHJyA1yYhZEPrZ/tFUKe9T5el4+JZX/rz9vfymnV1mPz/6oLEOK1ThY9V9q0L9sq/J6mS+0drD50PtXjrpR7UBp7lhQcmKO2Abjhbyt6E4nIhm5QU7MgrDEtloyDaumz/QfGS/2qDOl6zup0NJ99seqHu0Uc6KfLJ/jYNV/Qw3qoVV/VAHDwcWXDhPPl3f0/4nV2//uv312LHA5MUdsg/FC3lZ0pxORjNwgJ2ZB5GObPer+m279vHxKKk/ZdEA7lo7JMGrHfurx2Z8qs0p/PA5W/TfUUOX1UgUMB/odKJdt2Ou/Y1XKiTliG4wX8raiO51cGMkh3p6CUoIOc27ocrr+mJETsyDysc0edVq6n+flUwmVX66XzsjQyQBOmflilfX47I9VltU4WPXfUEOV10sVMBx069H3908u2P/uv+Vide91sbljQcmJOWIbjFeYJc/9or4DzekX9hngP26K3jt978MzO3TpXrde/XPOa3XlqBvVxtaiPW/9c+xdD0iU16xVS/7+csKDMgdUrv+aY1vRnU4ujOSoBIPTjTpdv1kJuv8AplLMxVwiJ2ZB5GObPepUutXz8imp/JHZSxslnS39kQHU799rVY9Vf3xmWY1DqUX/DTVUeb1UAcNBev5rsm7+dzxX5Jg7FpScmCO2wXiFWfLc23XqanhDVft9rP+4GXnjrRLTrxT8paj8PzkHy598YZXEnJa1751TXbr3vPYXd6zff1wmufy99uZfnX9hb3kpoBXwX3NsK7rTKYYjOSg5HYFO12+WtNgwsZH6BEdLMRdziZyYBVGPbYcGPPb2qHNooGJMTswR22C8wix57jMWrRk87Cf6xMFXXDNz8VrJWlf4ZrPmLYreO62yCt/+Ul7e7frL3+VFgP6fZ+s14fd/uvSqnxoSJeXuPzypHcfzxIvudIp8JPvZzDDhB/TlVaI51+dmhlby026prwj0ucnkuS3bSD36YhuK/npeq7aGc80KsP7Syn+0Ou63D2k7wuv/T4P//pslJ8q86zPocn2KuZhL5MQsiHxsG+TEgMfkHnVODFTsyYk5YhuMV5glz73ko287dOm+Nv9VLWXNzqMdzr9AErXpcdnwUdPnLFPlH52XrO0716JN++Sc/eYKRR27Xrhsw15D4svZhepLnfE88aI7nSIfyVabGSr5CYbfPfqc2izRajNDK/lv19yoz00mR94wTl6B6IvJq5RA3n4IsH7RtOde7tFvsDyv3CMf9R08VJ1o1f8EX2jpYkbFvS1clWvVB/fIiVkQ+dg2yIkBj8k96pwYqNiTE3PENhivMEubAzOXpF89+hYtZcR1Nz+9JENlvZS1p12nruobBvKSWvua53PJ2Y2bNL3qZz///ZMLkjcV6T+nr12nrvqxjJL2Jpl2HM8TL7rTKfKRXN9iM0Mlq2B4dvn6Lt17qq8GWm1maCX/7Zob9bnJpLiisXc9UFrpwK79xR1yIIZP/zrESgHWX1ppsGT6aMcpmw6oE/333yztxAcfn9vlgl7abDX3wT1yYhZEPrYRck5OzBHbYLzCLO3uXPLRt7ISyI1eJAeGG7esDXNTN8qB5PYZOESdm//nz/60YMVNd0zselGfFm3aq3XFynjV/+FnvW5eEpxWdKdT5CPZajNDJZ/BkJZb0qpdx82H3lcpVpsZWsl/u+ZGfW4yuX7fsZ4XXyIHLVq3k/6UVv7CXPk/PwqwflHDxEY+94Ly33+ztBOL3jvdvEVr7Z/Em/vgHjkxCyIf2wg5JyfmiG0wXmGWujs/szTz5+PvufH2u9X3CVTWzMVrtV/k/ubBR7U3w8ySe32H8y/Qjq0+apR07bjKJSFBhznX04rudApLJFtdHat0n5sZ6s8ypGwqea9l2w4rt5XqE602M9RqCLZdc6NWm0yK38o5WN6+czd5abGl9APNfqlKfLarZRlSrOo/Y7x++Pc7euNVatF/faMKLV0rMH3OMulk8ftfqxQXyolZEJbYRsglcmKO2AbjFWapu7O8pL6gd3+Rem2tsg5+8M15rdom5+yXV/9W3zbY9eY/1L+4+u3kJ3x+uf7XD0zXjt28JDit6E6n6EayfjNDJUMw7Hnrn526XaS9w6qX1WaGgcjcbp269Qw2zmqTyeHX3nT7vVPkNcnosb8eP3HqiOtu1p9lpcDr796zn9qHRb8Jp17m/pulTiz58P/adOgijs1nVS6RE7MgurGNUHjlxByxDcYrzPJzd9ZnPfj4XHkZLY5KpVzYZ8ATz6/ceOCdovdOr99//OrRt4y66XYta987p86/sPe1N/8qu+hteeUtf+VVe4s27WVNNdccb4rudIp8JFttZqhkCIb+l175+ycXmOux2szQSv7bvajvwIefWaz/YqLVJpPiYOQVxayXXpm5eK0cTH16kbktswKv/5HZS6VwTvG7uUc+kueuRsN//83SD+PTSzLOPudcN88yJ2ZB5GMbIefkxByxDcYrzPJzd9ZnyWonr7m3v/o3lZKcs3/4tTedc25LeXHfpn3nO+57WPyWypXV4ta7f39uyzbVa9SQemTJ1J+bYELfbmwrutMp8pFstZmhMQIq8ZmuqvK5maGVrNrVlLb1kMRktWrVVP1Wm0xm7n5DiokB2v7aJ3IgD81tmRV4/SUffTv2rge07STE1dWoWVNL999/s/QDdajiO3nlo09xm5yYBZGPbYSckxNzxDYYr+ho3opNI2+81ZweiGTNkNffVntPxJuiO52IZDcr98hHLVq3M6fHnpyYBcQ2iiU5MUdsg/GKgraWVXTsemGVr7n9aMHKLee2bJP/58/MWfGm6E6nOI9kd+onY36Ztfet3W99Pnrsr6vcnyw25MQsILZRLMmJOWIbjFekJYNTr36D+WmbzVnIhqI7neI5kl2rJxamtWzboXGTpj/7xXj1C8fYlhOzgNhGsSQn5ohtMF7I24rudCKSkRvkxCwgtlEsyYk5YhuMF/K2ojudiGTkBjkxC4htFEtyYo7YJi6MV4L1z5H8ZHldMfzU9IrudIpwJCPkU07MAmIbxZKcmCO28bbxevDxubVr13noifnmLL38WBA/We6RvU7aO0tTKOdGWNGdTuGKZIRCkROzIFyxnVBJ6OkIhSIn5ohtvG28unTvOX3Osi4X9DJn6eVnGvvJco8i38nIt2hb0Z1O4YpkhEKRE7MgXLFtZaSCTUcoFDkxR2zjYeO1ZkeZ9g93xX6t2XlUn/XovOSWbTvUrFWrTfvOMxat0U9jP1lK6/cdG/bTGxIbN2mY2OiKn1y/840T5jJy4rTnXj7nvFbVqlXTUuambhQLWLt2Han/7j88qf4XkJSc+vSijl0vrFO3XqduFyVvKnpiYZq0Lg97D7gsp/hdVae2oaX0Tf7+8dmX1Ol6/LellyosB3NX5PToO0ieTpOm54y8YZzahyK76O2h14xOOrtZ/QYNpYD2W0tzi1YD4qfm0spOduvRt3adum07nv/Ui6v16VV2PnBFdzqFJZIRClFOzAJiG8WSnJgjtvGw8br5zkninORg8lML9bv1PL9mW4vW7V7K2lP49pdL1+0+t2UbzT34z9Krc7ceS17Ztf/df+9565833TFx9Nhfm8vIif0uuWLzofe1h8s37pOz5O++d06Jmxl4+Yh7ps5QJcVgrSt8Uxq9/d4pZyU27jNwiHp42fBRWrFnl68XG7c4M7/w+BfyV47F06ga9E37aUsvdZYcdOjS/UzNb3+5tazimuvHXj36Fi2r60V9Hnhszq43/yGNvpxdOGjo1T5btBoQPzWLh2va/Lx5KzYVHDuZnv+a+DYtPcDOB67oTqewRDJCIcqJWUBso1iSE3PENl41XsXvf93h/Au0/xMivqF5i9aSomWJrVGWRfRccrayEX6yrCS+QTyQOV1OXJv/qnrY/7Kr0rYeUg9zD3/Yul0nVVJslnYsXTU8FB+mHffoN1j6o2oQH6a9n6fVoNJL/ball954rd5+RKVvf+2TRklna8f1G57lcx9XP8OiHxA/NffoO2jWS6+YTw+w84ErutMp9EhGKHQ5MQuIbRRLcmKO2Marxkt8ya8mPaIeXj36ljkpG7TjxMZNdr/1ucrSvE6VWXptKnlv2MgxSWc3S6ikeo0a5jKSrv49nKhxk6ZS7IyqV9f+o5w6S44PVXynP9HwUDtIbJQk/VHpciwphjKa/LSllzpLDko++tZn1viJU6W2MbdO+NOCFdvKPjYX0GQ1IH5qrlO33q6//F2fpSnAzgeu6E6n0CMZodDlxCwgtlEsyYk5YhuvGq8hI67VTIBi6DWjtSzxK1buyk+WXn0HDxVHknvko4MffFNU/h+fZQyJtevU1RsXPyWtHvowXo2b+DzFT1t6qbPM/denrM1/ddK02VeOulE68ODjc80FSq0HxE/N0nmfxivAzgeu6E6n0CMZodDlxCwgtlEsyYk5YhtPGq8dr3/aMLGR/p+BFBw7KSnal779fJ7oJ0uvevUbFL79pXb80voCn2UMiT0vvuThZxabi5lLWj3s0W+wetOutLJv6qPGGjVrlnz4fyrLT1t6BWKP9MopflfGUDs2tGg1IOZ6VIp4tdkvrzPklgbc+cAV3ekUYiQjFBY5MQuIbRRLcmKO2MaTxuvBx+eOvGGcIfGa68dqG3otXJVr9Q16P1l6nX9hb2li3zunVm4rbd+5m88yhsRFmTsTGzd5fH5q/p8/E18oDfW75AqfJa0ePrt8vfRHeqX6pjxiy7Ydnl+zTX2o56ctnzWb+6+3RwtWbhHDKo1OfXpR9579tHRDi1YD4qdmeQrnnNtSKhd/nLHr9StH3ailB9j5wBXd6RRiJCslVBJ6OopPOTELwhXbCLlBTswR23jSeHXp3lPWb0PioowdakOv6XOWicGqWatW63adDHtG+MlSWr39SNeL+tSqVVvcz+SnFvosY04UPyceol79BomNkgYMGb44M99nST8PH35mcat2HWvUrKnfTkI0e1lWizbtq9eooQpbteWzZnNXVYoMY//LrmpwlnihpsNGjlF7WxhatBoQPzVrlWjbRohX035/qimQzgeu6E6nECNZKaGS0NNRfMqJWRCu2EbIDXJijtjGk8YLIaXoTiciGblBTswCYhvFkpyYI7bBeCFvK7rTiUhGbpATs4DYRrEkJ+aIbTBeyNuK7nQikpEb5MQs+LSwTOoszPzfrnsIeVeFGQfPzJFHng7jHLENxgt5W04sOYFDJCM3yIlZcPLNcqlz95Lt5uYQ8pzy52+UeF4xa0EY54htMF7I23JiyQkcIhm5QU7Mgq/+8YXUufPJdHNzCHlOW3+/JL3agNSXloVxjtgG44W8LSeWnMAhkpEb5NAsyGr+ky03PmZuDiHPaf0ld2Wcd3Vqamp454g9MF7I23JoyQkQIhm5QQ7NgsJfPv5Ks2tKdf/iDCEvquStL9NrDs64biLGi+UKhUEOLTkBQiQjN8ihWfDemu3pZ75fX2JuESEPafu0FRLJGU8vxHixXKEwyKElJ0CIZOQGOTQLvv3q6w2tfrbxkrvNLSLkFZX8+Z8ZZw1N73NzRkYGxovlCoVBDi05AUIkIzfIuVlw7PlMqblgRaG5UYQ8oU0/m5JeY2DG3MXp6ekpKSlpaWlZWVkFBQXl5eXGcI8U0TFe7BCDwqXo7s5CJCM3yLlZ8O1XX+f1vT0zaXjx4U/M7SLkcm3/wzKZGuljH8rIyFizZo0Yr5UrV2ZnZxcVFVVUVBjDPVJEx3ixQwwKl/IX5KRHb3cWIhm5QY7Ogi//+mFmw8vXd7vl4NHPzE0j5FrlTX45vdqAjCHjxXWlp6eL5RLjJfYrNze3rKzsxIkTxliPFNExXuwQg8KlbZOjuTsLkYzcIKdnweGVGzPqX5bV+rr9O4+bW0fIbSr5y8kznzAm9E8X17V6jbiuVatW6T9nlAly8uRJY6BHiugYLyHrHHaIQWHQ+ksnRHd3FiIZRV1Oz4KKioriNRszmlyZXmNg7q9m89YXcq1K3vpy+x9Tz3ybvsZA7RNGzXWlViLHeXl5ZWVlEtKnT582BnqkiJrxYocYFLrcsDsLkYyiqwjMgpMnT5aXlxfn71k/amJ69QGirIvHb31w8c65G/auO4xCUeGKvTv/lF6Yts+chQKXhOLWhxavv+QumQvpCf0z+tycPneR3nWpDxlLSkokmKP4dtf3UTRe5ewQg0LWjulpZ+ZYVHdnIZJRdBWBWXD69OkTJ05InUVFRRuWpK69YdKac0ec+RwHIVep+YiM0ffJXNAslzgt7XtdMjXkOCcnRwJYwliCOYpvd30fReP17VdfZ7NDDApBaneW6P5ImEhGUVTEZoHee+Xm5kpzackpqbMXrJgyQ5Q2dSayp5VjHxTHsGrsg+YsFLhWPLtwxbLl2ueJGik/IJNCwlWC1iWu6/soGi/h2EJ2iEH2tfm6h7XdWaL+I2EiGUVLkZwFynuVlJTk5eWJw9PeUZCFbQXYZeXDT8vdY+XDZ/ZggzAiYSnBKSEqgSrhKkHrEtf1fXSN17dffb2NHWKQLe2YmnzmjeWxD7nhR8JEMoqKIj8LNO9VXl4uTRQUFEhb4vNkYcsEu2Q8NkcuYubjc4wZEBoSlhKcEqISqBKuErQucV3fR9d4fV+5Q8wrDYdmdxvLz2RQ4No+ZXl6tYEZQ8a750fCRDKKsKI1C2TpksorKiqkFVnPioqKpMV8sMu2uWd2+Nw292VjBoSGhKUEp4SoBKqEqwStS1zX91E3XsJf1m3PbDAkq81odohBVarkLyc3X/fImVf5st6sWu2qHwkTySgycsMs0OzXiRMnpK3y8vLjYJfDKzfKpTyyaqMxA0JDwlKCU0LUVZZLI/rGSwbljZz8V86+Kr3GwK2/mcMbBsinSt76csejKzMT/7s7iwt/JEwkI6fl/lkAwaL9v9dP9xw2ZkDsEn3jpX1p4M3Sss1jHtR2iMke8OvtU5J3L8w179URV2J/F5GEwfapyRuG3JNe63+7s7jzR8JEsj0R51XKQ7MAggXjFYdE33h9r/uxTEHGxuxf/iG9xTVn3kVHSKn5iPTrJq6dMV9e30ukuvZHwkQyclAemQUQFBivOMQVxut78w+VMzLXzF+88uGnz+zPUblPTBxuFcP+Lmm63Vm0ZUZ7fS+LjTt/JPw9kRy8iPMq5blZAIGD8YpD3GK8vvf1Q2W5p2hfYojPrWLY30WPtimLBIOEhASGO38krEEkBwVxHjgemgUQIBivOMRFxut70w+V5Z4iL+ZycnLic6sY9nfRo23KIsEgIaEtNsfd9yNhBZEcOMR54HhrFkAgYLziEHcZLw1t0dLeM3jjjTdKSkric6sY9nfRo23KIsEgIaG9vnf/YkMkBwJxHjhenAXgH4xXHOJG46VQ61Z8bhXD/i563LwpS5XEeST7hzgPHE/PAvAJxisOcbXxinOYkBAPEOcQzxD/cQjGy70wISEeIM4hniH+4xCMl3thQkI8QJxDPEP8xyEYL/fChIR4gDiHeIb4j0MwXu6FCQnxAHEO8QzxH4dgvNwLExLiAeIc4hniPw7BeLkXJiTEA8Q5xDPEfxyC8XIvTEiIB4hziGeI/zgE4+VemJAQDxDnEM8Q/3EIxsu9MCEhHiDOIZ4h/uMQjJd7YUJCPECcQzxD/MchGC/3woSEeIA4h3iG+I9DMF7uhQkJ8QBxDvEM8R+HYLzcCxMS4oGKTXslzo/NXysBj1C86di8dIn/j7fsM04MiF0wXu7lE4wXxAHawoNQPOv4grXGiQGxC8bLvWC8IB449cHfZNWRV/wS6sgNOjb/jBWWi2LOQmGXRL4MtcwC48SA2AXj5V4wXgAQebjzADgKxsu9cPsDgMjDnQfAUTBe7oXbHwBEHu48AI6C8XIv3P4AIPJw5wFwFIyXe+H2BwCRhzsPgKNgvNwLtz8AiDzceQAcBePlXrj9AUDk4c4D4CgYL/fC7Q8AIg93HgBHwXi5F25/ABB5uPMAOArGy71w+wOAyMOdB8BRMF7uhdsfAEQe7jwAjoLxci/c/gAg8nDnAXAUjJd74fYHAJGHOw+Ao2C83Au3PwCIPNx5ABwF4+VeuP0BQOThzgPgKBgv98LtDwAiD3ceAEfBeLkXbn8AEHm48wA4CsbLvVRs2iu3v2Pz18p9ECGEIqNj89LlzvPxln3GWxIAhAOMl3vRbn8IIRR5HV+w1nhLAoBwgPFyL6c++Jvc++R156d7DiOErHRs/pmXKDJZzFnIhuSeI4Mp9x/jLQkAwgHGCwC8zSd8JwkAvAPGCwC8DcYLADxE+I3XE088ITVOnz7dmAEA4AAYLwDwENOmTRObNGbMmLAZr0WLFkmN99xzjzEDAMABMF4A4CFuu+02sUm/+tWvwma8tm/fLjUOGjTImAEA4AAYLwDwCt99913r1q3FJj366KNhM16nTp2qW7duzZo133//fWMeAEC4wXgBgFfIzs4W19WsWbOUlJSwGS9h/PjxUu9dd91lzAAACDcYLwDwBJ999lnbtm3FIP3mN79JTU0Np/F666236tatW61aNanRmAcAEFYwXgDgfk6cODFw4EBxXZ07d16zZk1KSkpaWlpWVlZBQUF5ebmx9I+p2ngJ8+bNk9pr1qw5e/bsb775xpgNABAmMF4A4HLWr1+vvdfVrFmzpUuXasZr5cqV2dnZRUVFFRUVxhN+TEDGS3jssccSKmnevPm4ceMeBwBwgNnjJ4nxmj3+PmMGAEC0uf3229u0aaPZoc6dOy9ZskRc14oVK1JTU9PT0/Py8srKyk6cOGG0UD8mUOMlJCcnt2/fXmsPAMAJuickivHqnnCWMQMAwB00a9bsN7/5jViuVatWietKSUmRg5ycnKKiouPHj588edLon35MEMaroqLijTfeWLZs2cSJE8eMGTMaACDc3HXpSDFed136E2MGAEC0ufPOO6dPn55aSUolciCuKzs7u6CgQDySOKXTp08b/dOPCcJ4iYnTvJfULs4uPT1dGktLS1sBABAmVj78tBivlQ/PNGYAALgJ8T/igsQLiSNSrqvKt7u+D8p4iYlT3quoqCgvL08ay8rKygQACBMZj80R45X5+BxjBgCAmxD/Iy5IvJA4IuW6qny76/ugjJeGVHrixIny8nJppqSkRFxePgBAmNg2d5kYr21zXzZmAAC4CfE/4oLEC4kjEl8UiOXSCNp4ff/DW1/SjPg7ae84AECYOLxyoxivI6s2GjMAANyE+B9xQeKFAnyjS2HHeAEAOAT7eAFAbIPxAgAXgfECgNgG4wUALgLjBQCxDcYLAFwExgsAYhuMFwC4CIwXAMQ2GC8AcBEYLwCIbTBeAOAiMF4AENtgvADARWC8ACC2wXgBgIvAeAFAbIPxAgAXgfECgNgG4wUALgLjBQCxDcYLAFwExgsAYhuMFwC4CIwXAMQ2GC8Ar/L15198cfwDcSqxpGPz0sV4HZu/1pzlXcll+uofXxivHwDEJRgvAI/x8Zb9xb96Mvu8n4hBQR7S+nOuLhr36Ptrt3/71dfGiwoAcQPGC8Az/G3Hwa29x8kSnnnW0K0j79szZd6+WcuKk9fFkopeXF0wZZ78NWd5V3KZ9kydt+3a3607+yq5fBtbjTr+fOa3X39jvMAAEAdgvAA8wHfffnt0ygtn3jVpPWrf0y+9/uprr4M3KX45Y1P/2+RSbu93+5fvfGS80gAQ62C8ANyOuK7C0ZNlqd5xy9TXyo4aV3LwIEXPr3yl8bDMBkMOr9xYUVFx8uTJ06dPGy88AMQiGC8At3P0D8+L69ozdZ5x9QYvc2RnYXbn68V7Fa/ZWF5efuLECbwXQDyA8QJwNX/bcfDMx1K3TDWu2+B9juzam9VyZEbSsOL8PcePH8d7AcQDGC8AF/Pdd1t7j1vfehSfMMYqh9blptcYuH7UvUVFRXgvgHgA4wXgXj7esj89of++Z142LtcQQ2y9ZUp69QEbFqfgvQDiAYwXgHspuuOJVxKHvn70VeNaDTFE2Z79YrzW3jApNze3pKSkvLz85MmTxlAAgFgB4wXgXtafe83WayYaF2qIObJ637K2xdXp6el5eXllZWUVFRW86QUQq2C8AFzK159/cebHjFP4MWPss/2ep9KrDUhbnpKVlVVQUHD8+HHe9AKIVTBeAC7l5JvlZ77g9exy4yoNMUfBU4vlWqfOmr9mzZrc3NyysrITJ04YAwIAYgKMF4BL+bSwTBbjA8syjas0xBwHXs6Qa532yNMrV67Mzs4uKiqqqKgwBgQAxAQYLwCX8snuw7IYFyevM67SEHPIVZZrvWLKjLS0NO3TxvLycmNAAEBMgPECcCkYr/hBM15pU2euWLEiMzMzPz//+PHjxoAAgJgA4wXgUjBe8QPGCyB+wHgBuBSMV/yA8QKIHzBeAC4F4xU/YLwA4geMF4BLwXjFDxgvgPgB4wXgUjBe8QPGCyB+wHgBuBSMV/yA8QKIHzBeAC4F4xU/YLwA4geMF4BLcdp4JSQkGJNCwEZtNk6JDJHvGMYLIH7AeAG4lLAYr9LS0okTJ3bs2LFOnTrNmjW77LLLkpOTtazw2otAajOUCeSUqBD5jmG8AOIHjBeASwndeB0+fLhXr16jR4/esGHDkSNHduzYsXDhwj59+mi54bUXgdTmFeMVeTBeAPEDxgvApYRuvO6///5hw4YZU39AfM/zzz/fs2fPhg0bNmnSZNSoUXv37lW5YtG6du1au3btVq1aTZw48ejRo/qs7t2716lTp127drNmzdIS9S5q9erVTZs2nTZtmkp5vbKAHi3FXgcUW7ZskSeYlJRUv359qefFF19UWVanS6OPP/548+bNq1Wr1rhx49LSUnWKHDdq1KiwsFD/XHw+WS3dZ/32wHgBxA8YLwCXErrx6ty586pVq4ypPyD2omPHjsuWLTt48KCs9CMr0bLS0tK6dOkifw8dOiTmZvDgwZMmTdKyxNw0a9bshRdeOHDgwPr164cPH65q0w4WLFggtmb58uXaQz16Q6M9tNEBPd26dZs8efL+/fuLi4vFslxyySVaup/TpdH+/ftv375dji+//HK9l3rmmWeuuOIKrYyWYvVk/dRvD4wXQPyA8QJwKaEbrzp16ogpMab+gNgLWePVw4KCgsaNG2vHAwcOTE9PV1k7d+5s06aNdtyzZ885c+aoLIVmVh555BFxe7m5ucbsSszGy0YH9DRo0ECyjKl+T5dGs7KytGN5IoMGDVLF5Ky5c+dqZbQUqyfrp357YLwA4geMF4BLiYDxevXVVw0p2kFSUlL1H6hWrZqky4GWJXXu27fvf+f8gJS5++67e/XqVVxcbMz7AbPxstEBPXfeeaeU/PnPfz5jxoxdu3apdD+ny/GRI0e048OHD0tJzbrJXznWslQ3rJ6sn/rtgfECiB8wXgAuJXTjVeVHjVYpYjj0PkZPo0aNfHoROTc5OblJkyaLFi0y5v2A2XjpH+pT/HTAQFZW1oMPPjhixIjExMTJkydriX5ONzR600033X///XIwadKkX/ziF4YyVk/WT/32wHgBxA8YLwCXErrxEjPh/8v1Vim9e/eePn36jzP/y8UXX6x9HmdAOzc9Pb1Zs2azZ882ZldSo0YN/Vtc9jpgxbZt2xo2bKgd+znd0KgY03bt2smB/F29erWhjNWT9VO/PTBeAPEDxgvApYRuvEpLS3v06DFmzJgNGzaUlZXt3Llz4cKFffv21XL9+J5ly5Y1atToqaee2rt3b2Fh4eLFi/v3769lJScnn3POOYsWLSouLs7Ozh4xYoThXGnr3HPPffTRR7WHelq1arVkyRLlvex1QI8YI+mJFDh48OC0adMuuOACLd3P6eZG27ZtO3nyZPmrUlQZqyfrp357YLwA4geMF4BLCd14vV7pve6555727dvXrl27adOm/jdQ1aekpKSImahXr15iYuKgQYPEaqisefPmaTspdOjQwed2Enl5eW3atHnggQdUioac2LJly+rVq2uFbXdAIYkDBw5s2LBhUlLSVVddtW3bNpVldbq50fvuu69mzZryV6Xoy/h8sq9b128PjBdA/IDxAnApYTFe4AkwXgDxA8YLwKVgvOIHjBdA/IDxAnApGK/4AeMFED9gvABcCsYrfsB4AcQPGC8Al4Lxih8wXgDxA8YLwKVgvOIHjBdA/IDxAnApGK/4AeMFED9gvABcCsYrfsB4AcQPGC8Al4Lxih8wXgDxA8YLwKVgvOIHjBdA/IDxAnApnxaWyWJ8YFmmcZWGmKN4WeYZ4/XI0xgvgJgH4wXgUk6+WS6L8b5nlxtXaYg5CmculWu9YtYCjBdAzIPxAnApX/3jC1mM90ydZ1ylIebYcd/M9GoDUl9ahvECiHkwXgDuJavZiG0/u9+4SkPMsXHw+Izzrk5NTcV4AcQ8GC8A91Lwi4fXnX3V66+9ZlyoIYZ49UBJes1BGddNxHgBxAMYLwD38u6qrWd+2Mj362Oa3b9/Tq5yxtMLMV4A8QDGC8C9fPvV19ktRm7qf5txrYZY4ejeA5lnXZ7e5+aMjAyMF0A8gPECcDVvzl+bntC/6PmVxhUbYoKtI+9LrzEwY+7i9PT0lJSUtLS0rKysgoKC8vJyYygAQEyA8QJwNd9+9XVur1++0njYkZ2FxkUbPM7u+2eJq04f+1BGRsaaNWvEeK1cuTI7O7uoqKiiosIYCgAQE2C8ANzOl3/9MLPBkA1dxpTt3mdcusGz7Jr0TEb1gRlDxovrSk9PF8slxkvsV25ubllZ2YkTJ4xxAAAxAcYLwAMcXrkxo/5l61v99NC6XOMCDl7j6L7iM58wJvRPF9e1eo24rlWrVuk/Zzx+/PjJkyeNQQAAMQHGC8ADVFRUFK/ZmNnkyvQaA3fc+kfe+vIorx4o2fP7515JHCrXUfuEUXNdqZXIcV5eXllZmVzu06dPG4MAAGICjBeABzh58mR5eXlx/p71oyamVx8g2tT/tt33z9o786Xi5HXI5ZLLtPt3szZfemdGrcFndo7oc3P63EV616U+ZCwpKZELzdtdADEMxgvAA5w+ffrEiRPHjx8vKirasCR17Q2T1p539ZnPqpCH1HxExuj7Mp5eqFkucVra97rEeMlxTk6OXFy5xHKhebsLIIbBeAF4A733ys3NlZU7LTkldfaCtKkzVz3yzJpps9MffS7jsTnIhUpfuDRj1eqMSpTl0t7oSktLkxS5oLgugDgB4wXgGZT3KikpycvLy8rKWrVq1YoVK1J+QPuqELgZdbHkwsnlk4sol1IuKK4LIE7AeAF4Cc17lZeXl5WVFRQU5OTkZGZmau+gpKWlrQDXI5dJLpZcMrlwcvnkIsqllAuK6wKIEzBeAB5DlueTJ09WVFRob33l5+fn5uZmZ2dnZWVlguuRyyQXSy6ZXDjtjS65lHJBcV0AcQLGC8CT6O1XWVlZUVFRQUFBPrgeuUxyseSSYbkA4hOMF4CH0ezXiRMnZAkvLy8/Dq5HLpNcLLlkWC6A+ATjBQAAABAhMF4AAAAAEQLjBQAAABAhMF4AAAAAEQLjBQAAABAhMF4AAAAAESIk41VeXj5hwoT27dsngAPIwMrwyiAbxx0AAAC8iX3jlZeXl5SUNHny5MOHD3/11VfGbAgNGVIZWBleGWQZamM2AAAAeBCbxqu8vFwMwZ49e4wZEG5kkGWoed8LAAAgBrBpvCZMmDBlyhRjKjiDDLUMuDEVAAAAvIZN49WmTZvS0lJjKjiDDLUMuDEVAAAAvIZN41WjRg2+1xUxZKhlwI2pAAAA4DVsGq+EBJsngj0YcAAAgBjA5nKOD4gwDDgAAEAMYHM5xwdEGAYcAAAgBrC5nOMDIgwDDgAAEAPYXM7xARGGAQcAAIgBbC7n+IAIw4ADAADEADaXc3xAhGHAAQAAYgCbyzk+IMIw4AAAADGAzeUcHxBhGHAAAIAYwOZyjg+IMAw4AABADGBzOccHRBgGHAAAIAawuZzHhg/w0LPwUFcBAADACpvLuQ0fYOMUp3Fhl6zwUFcBAADACpvLuQ0fYOMUp3Fhl6zwUFcBAADACpvLuQ0fYHXKxo0be/XqVadOnQ4dOjz55JPffPONylq6dGm7du1q1arVuXPnNWvW6GuwOkvK5OTkDBo0qFGjRuecc864ceM+++wzdVZycrKU91mhy/FQVwEAAMAKm8u5DR/g85R9+/b16NFD/p46dertt98eMWLEjBkztKzNmzeL69qzZ8+XX34pf9u2batq8HOWlOnevXt+fr6cVVFRMXbs2FtuuUXL2rZtm6pw9+7dbdq08dkld+KhrgIAAIAVNpdzGz7A5ylXXXXVoUOH1MMPP/ywU6dO2vFll122adMmlZWTk6Nq8HOWlDly5IjK+uSTT84++2zteMiQIVKJysrOzvbZJXfioa4CAACAFTaXcxs+wOcpTZs2rVFJ9erVq1WrJmXkWMtKSkr6/PPPVcl//OMfqgY/Z8nxt99+q87SUrSDJk2aWFXofjzUVQAAALDC5nJuwwf4PKVu3boff/yxMbUSg/GSY1WDn7PMragUP07O/XioqwAAAGCFzeXchg/wecoll1yyePFiY2olho8a5VjV4OcscysqhY8aAQAAILrYXM5t+ACfp+zcubNJkyapqamfffbZp59+mpube8UVV2hZ4rTat29fWFj4r3/9S/7KsarBz1nmVlSKFOPL9QAAABBFbC7nNnxAggktXZyQ2KYGDRokJSUNHz48Pz9fnbJkyZK2bdvWqlWrU6dOycnJtWvXVllWZ6lqFfqUZcuWaftTSIVsJwEAAAARxuZyHnkfUFRU1LVrV2Nq3BD5AQcAAICwY3M5j4wPGDdu3Ouvv37q1Kni4uIePXrMnj3bWCJuiMyAAwAAgKPYXM4j4wNSU1MvvPDC+vXrd+3ade7cuYZ9IuKKyAw4AAAAOIrN5RwfEGEYcAAAgBjA5nKOD4gwDDgAAEAMYHM5D9YHJIAJ4xj5JdjyAAAA4EJsLufB+gApX/rx90jJxgAakwAAAMBr2FzOg/UBGC+DbAygMQkAAAC8hs3lPFgfgPEyyMYAGpMAAADAa9hczoP1ARgvg2wMoDEJAAAAvIbN5TxYH4DxMsjGABqTAAAAwGvYXM6D9QEYL4NsDKAxCQAAALyGzeU8WB+A8TLIxgAakwAAAMBr2FzOg/UBGC+DbAygMQkAAAC8hs3lPFgfgPEyyMYAGpMAAADAa9hczoP1ARgvg2wMoDEJAAAAvIbN5TxYH4DxMsjGABqTAAAAwGvYXM6D9QEYL4NsDKAxCQAAALyGzeU8WB/gZuMVlr4FW4mNATQmAQAAgNewuZwH6wOC8iUJP1C7dp1W7Trefu+UvX/9l7lYuBRU36wUbCU2BtCYBAAAAF7D5nIerA8Iypeowgfe/ypj1+uDhl49Ztxd5mKuUlBPUCtvHCO/BFseAAAAXIjN5TxYHxCULzEU3lpW0aRZc33K3NSNXS7oVbt2nZZtO9z9hycPfvCNynp0XrIk1qxVq037zjMWrVFVmTtgzpKDac+9fM55rapVq2a7oQBlYwCNSQAAAOA1bC7nwfqAoHyJ2XjVb9BQPVy+cV/nbj3k7753TmUXvT3w8hH3TJ2hZT2/ZluL1u1eytpT+PaXS9ftPrdlG7O7MreiP+h3yRWbD70fSkMBysYAGpMAAADAa9hczoP1AUH5ElVYfdQ4bOQYldv/sqvSth5SD3MPf9i6XSftuM/AIXNX5Kis55Kzze5KyZwlB2vzX1UF7DUUoGwMoDEJAAAAvIbN5TxYHxCUL0n4MU2aNd/+2icqt3GTptVr1Dij6tWrVasmBeRYy0ps3GT3W5+rkrve/Idq19wBc5YciNVTBew1FKASgh9AYxIAAAB4DZvLebA+IChfogoXlf8nLbekU7eLfjv5CZVbu07dbWUfm88SJTZKsvJDhg6UfPStOctQxl5DAcrGABqTAAAAwGvYXM6D9QFB+RJD4Y0H3mmUdHbh8S+0hz0vvuThZxabzyr1+wmg1KB/22xV3mGz3zK0a6+hAGVjAI1JAAAA4DVsLufB+oCgfIm58JWjbnxk1hLteFHmzsTGTR6fn5r/5892vP7pwlW5/S65QsuSY6vvvF89+pZrrh+7rezjvX/915JXdnXo0t3stwzt2msoQNkYQGMSAAAAeA2by3mwPiAoX2Iu/MLavK4X9VEPxfGIB6pXv0Fio6QBQ4YvzsxXWdPnLBNLVLNWrdbtOul3eRDzNPLGW5PObtYwsdFFfQfOXZFj9lvmdm00FKBsDKAxCQAAALyGzeU8WB8QrC8Jl6LVbpWyMYDGJAAAAPAaNpfzYH1AtAxQtNqtUjYG0JgEAAAAXsPmch6sD4iWAYpWu1XKxgAakwAAAMBr2FzOg/UBrjVA0ZKNATQmAQAAgNewuZwH6wMwXgbZGEBjEgAAAHgNm8t5sD4A42WQjQE0JgEAAIDXsLmcB+sDMF4G2RhAYxIAAAB4DZvLebA+AONlkI0BNCYBAACA17C5nAfrAzBeBtkYQGMSAAAAeA2by3mwPgDjZZCNATQmAQAAgNewuZwH6wMwXgbZGEBjEgAAAHgNm8t5sD4A42WQjQE0JgEAAIDXsLmcB+sDMF4G2RhAYxIAAAB4DZvLebA+IAFMGMfIL8GWBwAAABdiczkP1gdI+ddBh40BNCYBAACA17C5nAfrAzBeBmwMoDEJAAAAvIbN5TxYH4DxMmBjAI1JAAAA4DVsLufB+gCMlwEbA2hMAgAAAK9hczkP1gdgvAzYGEBjEgAAAHgNm8t5sD4A42XAxgAakwAAAMBr2FzOg/UBGC8DNgbQmAQAAABew+ZyHqwPwHgZsDGAxiQAAADwGjaX82B9AMbLgI0BNCYBAACA17C5nAfrAzBeBmwMoDEJAAAAvIbN5TxYH4DxMmBjAI1JAAAA4DVsLufB+oBoGS+H2g29WhsDaEwCAAAAr2FzOQ/WBwTrVA4cOHDbbbedd955NWvWlL9yLCnGQr4wNBRsuwESerU2BtCYBAAAAF7D5nIerA8IyqkcOnTo/PPPHz169ObNm48cOSJ/r7/++m7dupWWlhqLmgiqIduE3oqNATQmAQAAgNewuZwH6wOCcir33nvvkCFDDImSMnHiRO1Yaps1a1aXLl3q1KnTqlWrp556SqXr0VJUDY8++mjr1q1r1qwpfx977DGVLmWef/75nj17NmzYsEmTJqNGjdq7d6+WJZ5v+PDhjRo1kqwrr7yysLBQnaJOt0dC8ANoTAIAAACvYXM5D9YHBOVUOnXqtGLFCkOipHTu3Fk7ltpatGiRkpJy8ODB5OTk8847b+nSpSrrf+foHs6fP7958+bLli0rLi6Wv3IsZkuV6dixoyRKbfn5+SMr0bLE2y1fvry0tPTAgQO33HLLDTfcoE7RDmxjYwCNSQAAAOA1bC7nwfqAoJxKnTp19u3bZ0iUFEnXjrX3qFTWggUL+vXrp7JUuv5hr169pJhKFx/Wu3dvVSYzM1NlFRQUNG7cWD1UiPcSu6YdB/V0fGJjAI1JAAAA4DVsLufB+oCgnEogxquoqEhl7d+/v1GjRipLpesfJiYmSjGVLseSosq8+uqrKktL0Q7y8vKuuuqqpKSkhEqqV69uKGAbGwNoTAIAAACvYXM5D9YHBOVUAvmoMXTjZXWKPuXiiy++88478/Pzjx49WlpaqtLNpwSLjQE0JgEAAIDXsLmcB+sDgnIqgXy53vBRY9++fbXjGjVq6N++Uu326tVr4cKFKl1O0X/UqNINKfXq1Tt48KB2nJqaivECAACAULC5nAfrA4JyKiUlJV26dLn++uu3bNlSVlYmf8eMGaPfTiLB9OX6xYsXa1mtWrVasmSJ8l6q3fnz50sxKaxO0X+5XjtQqBRpdPLkyYcOHcrIyOjQoQPGCwAAAELB5nIerA8I1qkUFRXdeuutzZs3r1GjxrnnnmvYQDVBt51Ey5Ytn3jiCZU1b948SalevbrWor7d6dOnt27dWio0byehjg0pmZmZ4r1q1aolRu3hhx/GeAEAAEAo2FzOg/UBoTsVPeGtLSrYGEBjEgAAAHgNm8t5sD4gvFYpvLVFBRsDaEwCAAAAr2FzOQ/WB4TXKoW3tqhgYwCNSQAAAOA1bC7nwfqAGLBK4cXGABqTAAAAwGvYXM6D9QEYLwM2BtCYBAAAAF7D5nIerA/AeBmwMYDGJAAAAPAaNpfzYH0AxsuAjQE0JgEAAIDXsLmcB+sDMF4GbAygMQkAAAC8hs3lPFgfgPEyYGMAjUkAAADgNWwu58H6AIyXARsDaEwCAAAAr2FzOQ/WB2C8DNgYQGMSAAAAeA2by3mwPgDjZcDGABqTAAAAwGvYXM6D9QEYLwM2BtCYBAAAAF7D5nIerA9IABPGMfJLsOUBAADAhdhczvEBEYYBBwAAiAFsLuf4gAjDgAMAAMQANpdzfECEYcABAABiAJvLOT4gwjDgAAAAMYDN5RwfEGEYcAAAgBjA5nKOD4gwDDgAAEAMYHM5xwdEGAYcAAAgBrC5nOMDIgwDDgAAEAPYXM7xARGGAQcAAIgBbC7n+IAIw4ADAADEADaXc3xAhGHAAQAAYgCby3mNGjW++uorYyo4gwy1DLgxFQAAALyGTePVpk2b0tJSYyo4gwy1DLgxFQAAALyGTeM1YcKEKVOmGFPBGWSoZcCNqQAAAOA1bBqv8vLypKSkPXv2GDMg3Mggy1DLgBszAAAAwGvYNF5CXl6eGILJkycfPnyY73uFHRlSGVgZXhlkGWpjNgAAAHgQ+8br+8r3vSZMmNC+ffsEcAAZWBle3usCAACIGUIyXgAAAAAQOBgvAAAAgAiB8QIAAACIEBgvAAAAgAiB8QIAAACIEBgvAAAAgAiB8QIAAACIEBgvAAAAgAiB8QIAAACIEBgvAAAAgAiB8QIAAACIEBgvAAAAgAiB8QIAAACIEBgvAAAAgAiB8QIAAACIEBgvAAAAgAiB8QIAAACIEBgvAAAAgAiB8QIAAACIEP8f7WN6MFmASEQAAAAASUVORK5CYII=" class="uml" alt="uml diagram" title="" /></p>
+<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
+<p>Check that:</p>
+<ul>
+<li><a href="../server/index.html">PMM Server is installed</a> and running with a known IP address accessible from the client node.</li>
+<li><a href="index.html">PMM Client is installed</a> and the <a href="index.html#register">node is registered with PMM Server</a>.</li>
+<li>You have superuser (root) access on the client host.</li>
+<li>You have superuser access to any database servers that you want to monitor.</li>
+</ul>
+<h2 id="setting-up-client-user">Create a database account for PMM<a class="headerlink" href="#setting-up-client-user" title="Permanent link">&para;</a></h2>
+<p>It is good practice to use a non-superuser account to connect PMM Client to the monitored database instance. This example creates a database user with name <code>pmm</code>, password <code>pass</code>, and the necessary permissions.</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">&#39;pmm&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;pass&#39;</span> <span class="k">WITH</span> <span class="n">MAX_USER_CONNECTIONS</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">GRANT</span> <span class="k">SELECT</span><span class="p">,</span> <span class="n">PROCESS</span><span class="p">,</span> <span class="n">SUPER</span><span class="p">,</span> <span class="n">REPLICATION</span> <span class="n">CLIENT</span><span class="p">,</span> <span class="n">RELOAD</span> <span class="k">ON</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;pmm&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="choose-and-configure-a-source">Choose and configure a source<a class="headerlink" href="#choose-and-configure-a-source" title="Permanent link">&para;</a></h2>
+<p>Decide which source of metrics to use, and configure your database server for it. The choices are <a href="#slow-query-log">Slow query log</a> and <a href="#performance-schema">Performance Schema</a>.</p>
+<p>While you can use both at the same time we recommend using only one&ndash;there is some overlap in the data reported, and each incurs a small performance penalty. The choice depends on the version and variant of your MySQL instance, and how much detail you want to see.</p>
+<p>Here are the benefits and drawbacks of <em>Slow query log</em> and <em>Performance Schema</em> metrics sources.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><i class="uil uil-thumbs-up"></i> <strong>Benefits</strong></th>
+<th><i class="uil uil-thumbs-down"></i> <strong>Drawbacks</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slow query log</strong></td>
+<td>More detail.</td>
+<td>PMM Client must be on the same host as the database server or have access to the slow query log.</td>
+</tr>
+<tr>
+<td></td>
+<td>Lower resource impact (with query sampling feature in Percona Server for MySQL).</td>
+<td>Log files grow and must be actively managed.</td>
+</tr>
+<tr>
+<td><strong>Performance Schema</strong></td>
+<td>Faster parsing.</td>
+<td>Less detail.</td>
+</tr>
+<tr>
+<td></td>
+<td>Enabled by default on newer versions of MySQL.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data source recommendations</strong></p>
+<table>
+<thead>
+<tr>
+<th>Database server</th>
+<th>Versions</th>
+<th>Recommended source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MySQL</td>
+<td>5.1-5.5</td>
+<td>Slow query log</td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td>5.6+</td>
+<td>Performance Schema</td>
+</tr>
+<tr>
+<td>MariaDB</td>
+<td>10.0+</td>
+<td>Performance Schema</td>
+</tr>
+<tr>
+<td>Percona Server for MySQL</td>
+<td>5.7, 8.0</td>
+<td>Slow query log</td>
+</tr>
+<tr>
+<td>Percona XtraDB Cluster</td>
+<td>5.6, 5.7, 8.0</td>
+<td>Slow query log</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slow-query-log">Slow query log<a class="headerlink" href="#slow-query-log" title="Permanent link">&para;</a></h3>
+<p>This section covers how to configure a MySQL-based database server to use the <em>slow query log</em> as a source of metrics.</p>
+<p><strong>Applicable versions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MySQL</td>
+<td>5.1-5.5</td>
+</tr>
+<tr>
+<td>MariaDB</td>
+<td>10.1.2+</td>
+</tr>
+<tr>
+<td>Percona Server for MySQL</td>
+<td>5.7.10+, 8.0.12+</td>
+</tr>
+<tr>
+<td>Percona XtraDB Cluster</td>
+<td>5.6, 5.7, 8.0</td>
+</tr>
+</tbody>
+</table>
+<p>The <em>slow query log</em> records the details of queries that take more than a certain amount of time to complete. With the database server configured to write this information to a file rather than a table, PMM Client parses the file and sends aggregated data to PMM Server via the Query Analytics part of PMM Agent.</p>
+<p><strong>Settings</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_slow_query_log"><code>slow_query_log</code></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>ON</td>
+<td>Enables the slow query log.</td>
+</tr>
+<tr>
+<td><a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_log_output"><code>log_output</code></a></td>
+<td><code>'FILE'</code></td>
+<td>Ensures the log is sent to a file. (This is the default on MariaDB.)</td>
+</tr>
+<tr>
+<td><a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_long_query_time"><code>long_query_time</code></a></td>
+<td>0</td>
+<td>The slow query threshold in seconds. In heavily-loaded applications, many quick queries can affect performance more than a few slow ones. Setting this value to <code>0</code> ensures all queries are captured.</td>
+</tr>
+<tr>
+<td><a href="https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_log_slow_admin_statements"><code>log_slow_admin_statements</code></a></td>
+<td>ON</td>
+<td>Includes the logging of slow administrative statements.</td>
+</tr>
+<tr>
+<td><a href="https://dev.mysql.com/doc/refman/8.0/en/replication-options-replica.html#sysvar_log_slow_slave_statements"><code>log_slow_slave_statements</code></a></td>
+<td>ON</td>
+<td>Enables logging for queries that have taken more than <code>long_query_time</code> seconds to execute on the replica.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<p><em>Configuration file</em></p>
+<div class="highlight"><pre><span></span><code><span class="na">slow_query_log</span><span class="o">=</span><span class="s">ON</span>
+<span class="na">log_output</span><span class="o">=</span><span class="s">FILE</span>
+<span class="na">long_query_time</span><span class="o">=</span><span class="s">0</span>
+<span class="na">log_slow_admin_statements</span><span class="o">=</span><span class="s">ON</span>
+<span class="na">log_slow_slave_statements</span><span class="o">=</span><span class="s">ON</span>
+</code></pre></div>
+<p><em>Session</em></p>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">slow_query_log</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">log_output</span> <span class="o">=</span> <span class="s1">&#39;FILE&#39;</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">long_query_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">log_slow_admin_statements</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">log_slow_slave_statements</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="slow-query-log-extended">Slow query log &ndash; extended<a class="headerlink" href="#slow-query-log-extended" title="Permanent link">&para;</a></h4>
+<p>Some MySQL-based database servers support extended slow query log variables.</p>
+<p><strong>Applicable versions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Percona Server for MySQL</td>
+<td>5.7.10+, 8.0.12+</td>
+</tr>
+<tr>
+<td>Percona XtraDB Cluster</td>
+<td>5.6, 5.7, 8.0</td>
+</tr>
+<tr>
+<td>MariaDB</td>
+<td>10.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Settings</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.percona.com/doc/percona-server/LATEST/diagnostics/slow_extended.html#log_slow_rate_limit"><code>log_slow_rate_limit</code></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>100</td>
+<td>Defines the rate of queries captured by the <em>slow query log</em>. A good rule of thumb is 100 queries logged per second. For example, if your Percona Server instance processes 10,000 queries per second, you should set <code>log_slow_rate_limit</code> to <code>100</code> and capture every 100<sup>th</sup> query for the <em>slow query log</em>. Depending on the amount of traffic, logging could become aggressive and resource consuming. This variable throttles the level of intensity of the data capture without compromising information.</td>
+</tr>
+<tr>
+<td><a href="https://www.percona.com/doc/percona-server/LATEST/diagnostics/slow_extended.html#log_slow_rate_type"><code>log_slow_rate_type</code></a></td>
+<td>&lsquo;query&rsquo;</td>
+<td>Set so that it applies to queries, rather than sessions.</td>
+</tr>
+<tr>
+<td><a href="https://www.percona.com/doc/percona-server/LATEST/diagnostics/slow_extended.html#slow_query_log_always_write_time"><code>slow_query_log_always_write_time</code></a></td>
+<td>1</td>
+<td>Specifies which queries should ignore sampling. With query sampling this ensures that queries with longer execution time will always be captured by the slow query log, avoiding the possibility that infrequent slow queries might not get captured at all.</td>
+</tr>
+<tr>
+<td><a href="https://www.percona.com/doc/percona-server/LATEST/diagnostics/slow_extended.html#log_slow_verbosity"><code>log_slow_verbosity</code></a></td>
+<td>&lsquo;full&rsquo;</td>
+<td>Ensures that all information about each captured query is stored in the slow query log.</td>
+</tr>
+<tr>
+<td><a href="https://www.percona.com/doc/percona-server/LATEST/diagnostics/slow_extended.html#slow_query_log_use_global_control"><code>slow_query_log_use_global_control</code></a></td>
+<td>&lsquo;all&rsquo;</td>
+<td>Configure the slow query log during runtime and apply these settings to existing connections. (By default, slow query log settings apply only to new sessions.)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<p><em>Configuration file (Percona Server for MySQL, Percona XtraDB Cluster)</em></p>
+<div class="highlight"><pre><span></span><code><span class="na">log_slow_rate_limit</span><span class="o">=</span><span class="s">100</span>
+<span class="na">log_slow_rate_type</span><span class="o">=</span><span class="s">&#39;query&#39;</span>
+<span class="na">slow_query_log_always_write_time</span><span class="o">=</span><span class="s">1</span>
+<span class="na">log_slow_verbosity</span><span class="o">=</span><span class="s">&#39;full&#39;</span>
+<span class="na">slow_query_log_use_global_control</span><span class="o">=</span><span class="s">&#39;all&#39;</span>
+</code></pre></div>
+<p><em>Configuration file (MariaDB)</em></p>
+<div class="highlight"><pre><span></span><code><span class="na">log_slow_rate_limit</span><span class="o">=</span><span class="s">100</span>
+</code></pre></div>
+<p><em>Session (Percona Server for MySQL, Percona XtraDB Cluster)</em></p>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">log_slow_rate_limit</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">log_slow_rate_type</span> <span class="o">=</span> <span class="s1">&#39;query&#39;</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">slow_query_log_always_write_time</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">log_slow_verbosity</span> <span class="o">=</span> <span class="s1">&#39;full&#39;</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">slow_query_log_use_global_control</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="slow-query-log-rotation">Slow query log rotation<a class="headerlink" href="#slow-query-log-rotation" title="Permanent link">&para;</a></h4>
+<p>Slow query log files can grow quickly and must be managed.</p>
+<p>When adding a service with the command line use the  <code>pmm-admin</code> option <code>--size-slow-logs</code> to set at what size the slow query log file is rotated. (The size is specified as a number with a suffix. See <a href="../../details/commands/pmm-admin.html#mysql"><code>pmm-admin add mysql</code></a>.)</p>
+<p>When the limit is reached, PMM Client will:</p>
+<ul>
+<li>remove the previous <code>.old</code> slow log file,</li>
+<li>rename the current file by adding the suffix <code>.old</code>,</li>
+<li>execute the MySQL command <code>FLUSH LOGS</code>.</li>
+</ul>
+<p>Only one <code>.old</code> file is kept. Older ones are deleted.</p>
+<p>You can manage log rotation yourself, for example, with <a href="https://linux.die.net/man/8/logrotate"><code>logrotate</code></a>. If you do, you can disable PMM Client&rsquo;s log rotation with the <code>--slow-log-rotation=false</code> option when adding a service with <code>pmm-admin add</code>.</p>
+<h3 id="performance-schema">Performance Schema<a class="headerlink" href="#performance-schema" title="Permanent link">&para;</a></h3>
+<p>This section covers how to configure a MySQL-based database server to use <em>Performance Schema</em> as a source of metrics.</p>
+<p><strong>Applicable versions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Percona Server for MySQL</td>
+<td>5.6, 5.7, 8.0</td>
+</tr>
+<tr>
+<td>Percona XtraDB Cluster</td>
+<td>5.6, 5.7, 8.0</td>
+</tr>
+<tr>
+<td>MariaDB</td>
+<td><a href="https://mariadb.com/kb/en/performance-schema-setup_instruments-table/">10.3+</a></td>
+</tr>
+</tbody>
+</table>
+<p>PMM&rsquo;s <a href="../../details/dashboards/dashboard-mysql-performance-schema-details.html"><em>MySQL Performance Schema Details</em> dashboard</a> charts the various <a href="https://dev.mysql.com/doc/refman/5.7/en/performance-schema-startup-configuration.html">performance_schema</a> metrics.</p>
+<p>To use <em>Performance Schema</em>, set these variables.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dev.mysql.com/doc/refman/5.7/en/performance-schema-system-variables.html#sysvar_performance_schema"><code>performance_schema</code></a></td>
+<td><code>ON</code></td>
+<td>Enables <em>Performance Schema</em> metrics. This is the default in MySQL 5.6.6 and higher.</td>
+</tr>
+<tr>
+<td><a href="https://dev.mysql.com/doc/refman/5.7/en/performance-schema-options.html#option_mysqld_performance-schema-instrument"><code>performance-schema-instrument</code></a></td>
+<td><code>'statement/%=ON'</code></td>
+<td>Configures Performance Schema instruments.</td>
+</tr>
+<tr>
+<td><a href="https://dev.mysql.com/doc/refman/5.7/en/performance-schema-options.html#option_mysqld_performance-schema-consumer-statements-digest"><code>performance-schema-consumer-statements-digest</code></a></td>
+<td><code>ON</code></td>
+<td>Configures the <code>statements-digest</code> consumer.</td>
+</tr>
+<tr>
+<td><a href="https://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html#sysvar_innodb_monitor_enable"><code>innodb_monitor_enable</code></a></td>
+<td>all</td>
+<td>Enables InnoDB metrics counters.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<p><em>Configuration file</em></p>
+<div class="highlight"><pre><span></span><code><span class="na">performance_schema</span><span class="o">=</span><span class="s">ON</span>
+<span class="na">performance-schema-instrument</span><span class="o">=</span><span class="s">&#39;statement/%=ON&#39;</span>
+<span class="na">performance-schema-consumer-statements-digest</span><span class="o">=</span><span class="s">ON</span>
+<span class="na">innodb_monitor_enable</span><span class="o">=</span><span class="s">all</span>
+</code></pre></div>
+<p><em>Session</em></p>
+<p>(<code>performance_schema</code> cannot be set in a session and must be set at server start-up.)</p>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span> <span class="n">performance_schema</span><span class="p">.</span><span class="n">setup_consumers</span>
+<span class="k">SET</span> <span class="n">ENABLED</span> <span class="o">=</span> <span class="s1">&#39;YES&#39;</span> <span class="k">WHERE</span> <span class="n">NAME</span> <span class="k">LIKE</span> <span class="s1">&#39;%statements%&#39;</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">innodb_monitor_enable</span> <span class="o">=</span> <span class="k">all</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>MariaDB 10.5.7 or lower</strong></p>
+<p>There is no <em>Explain</em> or <em>Example</em> data shown by default in Query Analytics when monitoring MariaDB instances version 10.5.7 or lower. A workaround is to set this variable.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://mariadb.com/kb/en/performance-schema-setup_instruments-table/"><code>performance_schema.setup_instruments</code></a></td>
+<td><code>'statement/%'</code></td>
+<td>List of instrumented object classes.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Session</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span> <span class="n">performance_schema</span><span class="p">.</span><span class="n">setup_instruments</span> <span class="k">SET</span> <span class="n">ENABLED</span> <span class="o">=</span> <span class="s1">&#39;YES&#39;</span><span class="p">,</span> <span class="n">TIMED</span> <span class="o">=</span> <span class="s1">&#39;YES&#39;</span> <span class="k">WHERE</span> <span class="n">NAME</span> <span class="k">LIKE</span> <span class="s1">&#39;statement/%&#39;</span><span class="p">;</span>
+<span class="k">UPDATE</span> <span class="n">performance_schema</span><span class="p">.</span><span class="n">setup_consumers</span> <span class="k">SET</span> <span class="n">ENABLED</span> <span class="o">=</span> <span class="s1">&#39;YES&#39;</span> <span class="k">WHERE</span> <span class="n">NAME</span> <span class="k">LIKE</span> <span class="s1">&#39;%statements%&#39;</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="query-response-time">Query response time<a class="headerlink" href="#query-response-time" title="Permanent link">&para;</a></h2>
+<p><em>Query time distribution</em> is a chart in the <a href="../../using/query-analytics.html#details-tab"><em>Details</em> tab of Query Analytics</a> showing the proportion of query time spent on various activities. It is enabled with the <code>query_response_time_stats</code> variable and associated plugins.</p>
+<p><strong>Applicable versions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Percona Server for MySQL</td>
+<td>5.7 (<strong>not</strong> <a href="https://www.percona.com/doc/percona-server/LATEST/changed_in_version.html">Percona Server for MySQL 8.0</a>.)</td>
+</tr>
+<tr>
+<td>MariaDB</td>
+<td>10.0.4</td>
+</tr>
+</tbody>
+</table>
+<p>Set this variable to see query time distribution charts.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.percona.com/doc/percona-server/5.7/diagnostics/response_time_distribution.html#usage"><code>query_response_time_stats</code></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>ON</td>
+<td>Report <em>query response time distributions</em>. (Requires plugin installation. See below.)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Configuration file</em></p>
+<div class="highlight"><pre><span></span><code><span class="na">query_response_time_stats</span><span class="o">=</span><span class="s">ON</span>
+</code></pre></div>
+<p>You must also install the plugins.</p>
+<p><em>Session</em></p>
+<ol>
+<li>Check that <code>/usr/lib/mysql/plugin/query_response_time.so</code> exists.</li>
+<li>
+<p>Install the plugins and activate.</p>
+<p>For <a href="https://mariadb.com/kb/en/query-response-time-plugin/">MariaDB 10.3</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">INSTALL</span> <span class="n">PLUGIN</span> <span class="n">QUERY_RESPONSE_TIME_AUDIT</span> <span class="n">SONAME</span> <span class="s1">&#39;query_response_time.so&#39;</span><span class="p">;</span>
+<span class="n">INSTALL</span> <span class="n">PLUGIN</span> <span class="n">QUERY_RESPONSE_TIME</span> <span class="n">SONAME</span> <span class="s1">&#39;query_response_time.so&#39;</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">query_response_time_stats</span> <span class="o">=</span> <span class="k">ON</span><span class="p">;</span>
+</code></pre></div>
+<p>For <a href="https://www.percona.com/doc/percona-server/5.7/diagnostics/response_time_distribution.html#usage">Percona Server for MySQL 5.7</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">INSTALL</span> <span class="n">PLUGIN</span> <span class="n">QUERY_RESPONSE_TIME_AUDIT</span> <span class="n">SONAME</span> <span class="s1">&#39;query_response_time.so&#39;</span><span class="p">;</span>
+<span class="n">INSTALL</span> <span class="n">PLUGIN</span> <span class="n">QUERY_RESPONSE_TIME</span> <span class="n">SONAME</span> <span class="s1">&#39;query_response_time.so&#39;</span><span class="p">;</span>
+<span class="n">INSTALL</span> <span class="n">PLUGIN</span> <span class="n">QUERY_RESPONSE_TIME_READ</span> <span class="n">SONAME</span> <span class="s1">&#39;query_response_time.so&#39;</span><span class="p">;</span>
+<span class="n">INSTALL</span> <span class="n">PLUGIN</span> <span class="n">QUERY_RESPONSE_TIME_WRITE</span> <span class="n">SONAME</span> <span class="s1">&#39;query_response_time.so&#39;</span><span class="p">;</span>
+<span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">query_response_time_stats</span> <span class="o">=</span> <span class="k">ON</span><span class="p">;</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="tablestats">Tablestats<a class="headerlink" href="#tablestats" title="Permanent link">&para;</a></h2>
+<p>Some table metrics are automatically disabled when the number of tables exceeds a default limit of 1000 tables. This prevents PMM Client from affecting the performance of your database server.</p>
+<p>The limit can be changed <a href="#2-2-command-line">when adding a service on the command line </a> with the two <code>pmm-admin</code> options:</p>
+<table>
+<thead>
+<tr>
+<th><code>pmm-admin</code> option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--disable-tablestats</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>Disables tablestats collection when the default limit is reached.</td>
+</tr>
+<tr>
+<td><code>--disable-tablestats-limit=N</code></td>
+<td>Sets the number of tables (<code>N</code>) for which tablestats collection is disabled. 0 means no limit. A negative number means tablestats is completely disabled (for any number of tables).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="user-statistics">User statistics<a class="headerlink" href="#user-statistics" title="Permanent link">&para;</a></h2>
+<p><strong>Applicable versions</strong></p>
+<p>User activity, individual table and index access details are shown on the <a href="../../details/dashboards/dashboard-mysql-user-details.html">MySQL User Details</a> dashboard when the <code>userstat</code> variable is set.</p>
+<table>
+<thead>
+<tr>
+<th>Server</th>
+<th>Versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Percona Server for MySQL</td>
+<td>5.6, 5.7, 8.0</td>
+</tr>
+<tr>
+<td>Percona XtraDB Cluster</td>
+<td>5.6, 5.7, 8.0</td>
+</tr>
+<tr>
+<td>MariaDB</td>
+<td>5.2.0+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<p><em>Configuration file</em></p>
+<div class="highlight"><pre><span></span><code><span class="na">userstat</span><span class="o">=</span><span class="s">ON</span>
+</code></pre></div>
+<p><em>Session</em></p>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="k">GLOBAL</span> <span class="n">userstat</span> <span class="o">=</span> <span class="k">ON</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="add-a-service">Add a service<a class="headerlink" href="#add-a-service" title="Permanent link">&para;</a></h2>
+<p>When you have configured your database server, you can add a MySQL service with the user interface or on the command line.</p>
+<p>When adding a service with the command line, you must use the <code>pmm-admin --query-source=SOURCE</code> option to match the source you&rsquo;ve chosen and configured the database server for.</p>
+<p>With the PMM user interface, you select <em>Use performance schema</em>, or deselect it to use <em>slow query log</em>.</p>
+<h3 id="with-the-user-interface">With the user interface<a class="headerlink" href="#with-the-user-interface" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Select <em>PMM &rarr; PMM Add Instance</em>.</li>
+<li>Select <em>MySQL &ndash; Add a remote instance</em>.</li>
+<li>
+<p>Enter values for these fields.</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Field</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default</th>
+<th><code>pmm-admin</code> parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Main details</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Hostname</em></td>
+<td>☑️</td>
+<td>Hostname or IP address of the service</td>
+<td></td>
+<td><code>--address</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Service name</em></td>
+<td></td>
+<td>Service name</td>
+<td></td>
+<td><code>--name</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Port</em></td>
+<td></td>
+<td>Port for accessing the service</td>
+<td>3306</td>
+<td><code>port</code> in <code>--address=address[:port]</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Username</em></td>
+<td></td>
+<td>MySQL user name</td>
+<td></td>
+<td><code>--username</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Password</em></td>
+<td></td>
+<td>MySQL user password</td>
+<td></td>
+<td><code>--password</code></td>
+</tr>
+<tr>
+<td><em>Labels</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Environment</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--environment</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Region</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Availability zone</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Replication set</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--replication-set</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Cluster</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--cluster</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Custom labels</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--custom-labels</code></td>
+</tr>
+<tr>
+<td><em>Additional options</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Skip connection check</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--skip-connection-check</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Use TLS for database connections</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--tls</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Skip TLS certificate and hostname validation</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--tls-skip-verify</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Table statistics limit</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>&rarr; <em>Disabled</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--disable-tablestats</code></td>
+</tr>
+<tr>
+<td></td>
+<td>&rarr; <em>Default</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--disable-tablestats-limit</code></td>
+</tr>
+<tr>
+<td></td>
+<td>&rarr; <em>Custom</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--disable-tablestats-limit</code></td>
+</tr>
+<tr>
+<td></td>
+<td><em>Use performance schema</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>--perfschema</code> if selected, <code>--slowlog</code> if not.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <em>Add service</em>.</p>
+</li>
+</ol>
+<h3 id="on-the-command-line">On the command line<a class="headerlink" href="#on-the-command-line" title="Permanent link">&para;</a></h3>
+<p>Add the database server as a service using one of these example commands. If successful, PMM Client will print <code>MySQL Service added</code> with the service&rsquo;s ID and name. Use the <code>--environment</code> and <code>-custom-labels</code> options to set tags for the service to help identify them.</p>
+<p><strong>Examples &ndash; TLS connection</strong></p>
+<div class="highlight"><pre><span></span><code>pmm-admin add mysql --username<span class="o">=</span>user --password<span class="o">=</span>pass --tls --tls-skip-verify --tls-ca<span class="o">=</span>pathtoca.pem --tls-cert<span class="o">=</span>pathtocert.pem --tls-key<span class="o">=</span>pathtocertkey.pem --server-url<span class="o">=</span>http://admin:admin@127.0.0.1 --query-source<span class="o">=</span>perfschema name localhost:3306
+</code></pre></div>
+<p><strong>Examples &ndash; Slow query log</strong></p>
+<p>Default query source (<code>slowlog</code>), service name (<code>{node name}-mysql</code>), and service address/port (<code>127.0.0.1:3306</code>), with database server account <code>pmm</code> and password <code>pass</code>.</p>
+<div class="highlight"><pre><span></span><code>pmm-admin add mysql --username<span class="o">=</span>pmm --password<span class="o">=</span>pass
+</code></pre></div>
+<p>Slow query log source and log size limit (1 gigabyte), service name (<code>MYSQL_NODE</code>) and service address/port (<code>191.168.1.123:3306</code>).</p>
+<div class="highlight"><pre><span></span><code>pmm-admin add mysql --query-source<span class="o">=</span>slowlog --size-slow-logs<span class="o">=</span>1GB --username<span class="o">=</span>pmm --password<span class="o">=</span>pass MYSQL_NODE <span class="m">192</span>.168.1.123:3306
+</code></pre></div>
+<p>Slow query log source, disabled log management (use <a href="https://linux.die.net/man/8/logrotate"><code>logrotate</code></a> or some other log management tool), service name (<code>MYSQL_NODE</code>) and service address/port (<code>191.168.1.123:3306</code>).</p>
+<div class="highlight"><pre><span></span><code>pmm-admin add mysql --query-source<span class="o">=</span>slowlog --size-slow-logs<span class="o">=</span><span class="nb">false</span> --username<span class="o">=</span>pmm --password<span class="o">=</span>pass MYSQL_NODE <span class="m">192</span>.168.1.123:3306
+</code></pre></div>
+<p>Default query source (<code>slowlog</code>), service name (<code>{node}-mysql</code>), connect via socket.</p>
+<div class="highlight"><pre><span></span><code>pmm-admin add mysql --username<span class="o">=</span>pmm --password<span class="o">=</span>pass --socket<span class="o">=</span>/var/run/mysqld/mysqld.sock
+</code></pre></div>
+<p><strong>Examples &ndash; Performance Schema</strong></p>
+<p>Performance schema query source, service name (<code>MYSQL_NODE</code>) and default service address/port (<code>127.0.0.1:3306</code>)</p>
+<div class="highlight"><pre><span></span><code>pmm-admin add mysql --query-source<span class="o">=</span>perfschema --username<span class="o">=</span>pmm --password<span class="o">=</span>pass MYSQL_NODE
+</code></pre></div>
+<p>Performance schema query source, service name (<code>MYSQL_NODE</code>) and default service address/port (<code>127.0.0.1:3306</code>) specified with flags.</p>
+<div class="highlight"><pre><span></span><code>pmm-admin add mysql --query-source<span class="o">=</span>perfschema --username<span class="o">=</span>pmm --password<span class="o">=</span>pass --service-name<span class="o">=</span>MYSQL_NODE --host<span class="o">=</span><span class="m">127</span>.0.0.1 --port<span class="o">=</span><span class="m">3306</span>
+</code></pre></div>
+<p><strong>Examples &ndash; Identifying services</strong></p>
+<p>Default query source (<code>slowlog</code>), environment labeled <code>test</code>, custom labels setting <code>source</code> to <code>slowlog</code>. (This example uses positional parameters for service name and service address.)</p>
+<div class="highlight"><pre><span></span><code>pmm-admin add mysql --environment<span class="o">=</span><span class="nb">test</span> --custom-labels<span class="o">=</span><span class="s1">&#39;source=slowlog&#39;</span>  --username<span class="o">=</span>root --password<span class="o">=</span>password --query-source<span class="o">=</span>slowlog MySQLSlowLog localhost:3306
+</code></pre></div>
+<h2 id="check-the-service">Check the service<a class="headerlink" href="#check-the-service" title="Permanent link">&para;</a></h2>
+<p><strong>Check service - PMM user interface</strong></p>
+<ol>
+<li>Select <i class="uil uil-cog"></i> <em>Configuration&rarr;PMM Inventory&rarr;Inventory list</em>.</li>
+<li>Look in the <em>Services</em> tab for a matching <em>Service Type</em> (MySQL), <em>Service name</em>, <em>Addresses</em>, and any other details entered in the form.</li>
+<li>Look in the <em>Agents</em> tab to check the desired data source is being used.</li>
+</ol>
+<p><strong>Check service - Command line</strong></p>
+<p>Look for your service in the output of this command.</p>
+<div class="highlight"><pre><span></span><code>pmm-admin inventory list services
+</code></pre></div>
+<p><strong>Check data</strong></p>
+<ol>
+<li>Open the <em>MySQL Instance Summary</em> dashboard.</li>
+<li>Set the <em>Service Name</em> to the newly-added service.</li>
+</ol>
+<p><strong>Percona Server for MySQL, MariaDB</strong></p>
+<p>If query response time plugin was installed, check for data in the <em>MySQL Query Response Time Details</em> dashboard or select a query in <em>PMM Query Analytics</em> to see the <em>Query time distribution</em> bar.</p>
+<p><strong>Percona XtraDB Cluster</strong></p>
+<p>Open the <a href="../../details/dashboards/dashboard-pxc-galera-cluster-summary.html"><em>PXC/Galera Cluster Summary</em> dashboard</a>.</p>
+<blockquote>
+<p><strong>See also</strong></p>
+<ul>
+<li>
+<p><a href="https://www.percona.com/doc/percona-server/LATEST/diagnostics/slow_extended.html">Percona Server for MySQL &ndash; Slow Query Log Extended</a></p>
+</li>
+<li>
+<p><a href="https://www.percona.com/doc/percona-server/LATEST/diagnostics/user_stats.html">Percona Server for MySQL &ndash; User Statistics</a></p>
+</li>
+<li>
+<p><a href="https://mariadb.com/kb/en/slow-query-log-overview/">MariaDB &ndash; Slow Query Log Overview</a></p>
+</li>
+<li>
+<p><a href="https://mariadb.com/kb/en/slow-query-log-extended-statistics/">MariaDB &ndash; Slow Query Log Extended Statistics</a></p>
+</li>
+<li>
+<p><a href="https://mariadb.com/kb/en/user-statistics/">MariaDB &ndash; User Statistics</a></p>
+</li>
+<li>
+<p><a href="https://www.percona.com/blog/2014/02/11/performance_schema-vs-slow-query-log/">Percona Blog &ndash; PERFORMANCE_SCHEMA vs Slow Query Log</a></p>
+</li>
+<li>
+<p><a href="https://www.percona.com/blog/2014/11/18/mysqls-innodb_metrics-table-how-much-is-the-overhead/">Percona Blog &ndash; MySQL&rsquo;s INNODB_METRICS table</a></p>
+</li>
+<li>
+<p><a href="https://www.percona.com/blog/2013/04/18/rotating-mysql-slow-logs-safely/">Percona Blog &ndash; Rotating MySQL Slow Logs Safely</a></p>
+</li>
+<li>
+<p><a href="https://www.percona.com/blog/2009/02/10/impact-of-logging-on-mysql%E2%80%99s-performance/">Percona Blog &ndash; Impact of logging on MySQL&rsquo;s performance</a></p>
+</li>
+</ul>
+</blockquote>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: 2021-05-12
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="index.html" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Client
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="mongodb.html" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              MongoDB
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Percona LLC, &#169; 2021
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="../../js/version-select.js"></script>
+      
+        <script src="../../js/toctree.js"></script>
+      
+        <script src="../../js/lightgallery.min.js"></script>
+      
+    
+  </body>
+</html>
